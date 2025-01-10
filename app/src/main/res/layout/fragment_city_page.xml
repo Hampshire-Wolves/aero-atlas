@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CityPageFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/locationImage"
+            android:id="@+id/locationName"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:textAlignment="center"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:hint="Enter Location Name Here" />
+
+        <ImageView
+            app:layout_constraintTop_toTopOf="match_parent"
+            android:id="@+id/locationImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:hint="Image of City placed here"
+        />
+
+        <Button
+            android:id="@+id/ViewFlightInformationButton"
+            app:layout_constraintTop_toBottomOf="@+id/locationName"
+            app:layout_constraintStart_toStartOf="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:drawableTint="#ff0000"
+            android:text="View Flight Information"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="308dp" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/ViewFlightInformationButton"
+            android:id="@+id/locationDescriptionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="start"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:hint="Description" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/locationDescriptionHeader"
+            android:id="@+id/locationDescriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="start"
+            android:textSize="20sp"
+            android:hint="Description of City entered here" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
