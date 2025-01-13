@@ -11,7 +11,7 @@
         android:id="@+id/baseFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/bottomnavbar"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_nav_menu"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,7 +19,7 @@
 
 <com.google.android.material.bottomnavigation.BottomNavigationView
 
-    android:id="@+id/bottomnavbar"
+    android:id="@+id/bottom_nav_menu"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingLeft="15dp"
@@ -27,7 +27,7 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:menu="@menu/bottomnavbarmenu"
+    app:menu="@menu/bottom_nav_menu"
     app:itemIconSize="50dp"
     app:itemIconTint="@color/iconcolorselector1"
     />
