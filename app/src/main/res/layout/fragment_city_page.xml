@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".CityPageFragment">
+    tools:context=".citypage.CityPageFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -111,7 +111,8 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{clickHandler::onFABClicked}"
+            android:onClick="@{clickHandler::CLICK_HANDLER_TBC_Should_return_user_to_homepage_upon_click}"
+            android:contentDescription="back button to return to homepage"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:src="@android:drawable/ic_input_add"
