@@ -5,145 +5,93 @@ xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/main"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".LoginActivity"
-android:background="@drawable/background">
+tools:context=".LoginActivity">
 
-<RelativeLayout
+<androidx.cardview.widget.CardView
+    android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:alpha="0.7"
-    android:background="@color/customcolour1" >
-
-</RelativeLayout>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="28dp"
-    android:gravity="center"
-    android:layout_above="@id/card_view">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/earth"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/aero_atlas"
-        android:textStyle="bold"
-        android:textSize="32sp"
-        android:textColor="@color/white"
-        android:fontFamily="sans-serif-medium"/>
-</LinearLayout>
+    android:layout_alignParentBottom="true">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="15sp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/arrow_left"/>
-
-</LinearLayout>
-<androidx.cardview.widget.CardView
-    android:id="@+id/card_view"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    app:cardCornerRadius="28dp"
-    android:layout_marginBottom="-20dp">
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:padding="28dp"
+        android:layout_height="match_parent"
+        android:padding="38dp"
         android:orientation="vertical">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/login"
-            android:textColor="#03685E"
+            android:text="@string/welcome_to_aeroatlas"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/customcolour1"
             android:textSize="32sp"
             android:textStyle="bold"
             android:layout_gravity="center"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"/>
 
-        <LinearLayout
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/please_enter_your_details"
+            android:alpha="0.7"
+            android:layout_gravity="center"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"/>
+
+        <EditText
+            android:id="@+id/loginPageEmailInputBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/already_have_an_account"
-                android:alpha="0.7"/>
-
-            <Button
-                android:id="@+id/signIn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sign_in"
-                android:backgroundTint="@android:color/transparent"
-                android:textColor="@color/customcolour1"
-                android:minHeight="0dp"
-                android:minWidth="0dp"
-                android:padding="0dp"
-                android:paddingStart="3dp"
-                android:paddingEnd="3dp"
-                android:clickable="true"
-                android:focusable="true"/>
-
-        </LinearLayout>
-
+            android:inputType="textEmailAddress"
+            android:drawableEnd="@drawable/email_outline"
+            android:background="@drawable/rounded_corner"
+            android:padding="15dp"
+            android:hint="@string/email_address"/>
 
         <View
             android:layout_width="wrap_content"
             android:layout_height="30dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/email_address"
-            android:alpha="0.7"
-            android:textStyle="bold"/>
-
         <EditText
-            android:id="@+id/emailAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:drawableEnd="@drawable/email_outline"/>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/password"
-            android:alpha="0.7"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:id="@+id/password"
+            android:id="@+id/loginPagePasswordInputBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:drawableEnd="@drawable/lock_outline"/>
+            android:drawableEnd="@drawable/lock_outline"
+            android:background="@drawable/rounded_corner"
+            android:padding="13dp"
+            android:hint="@string/password"/>
 
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/loginPageRememberMeCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/remember_me"
@@ -151,7 +99,7 @@ android:background="@drawable/background">
                 android:alpha="0.7"/>
 
             <TextView
-                android:id="@+id/forgotPassword"
+                android:id="@+id/loginPageForgotPasswordButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/forgot_password"
@@ -162,10 +110,10 @@ android:background="@drawable/background">
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="10dp"/>
+            android:layout_height="30dp"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/login"
+            android:id="@+id/loginPageLoginButton"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/LOGIN"
@@ -173,7 +121,7 @@ android:background="@drawable/background">
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="20dp"/>
+            android:layout_height="30dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -181,6 +129,9 @@ android:background="@drawable/background">
             android:text="@string/or_login_with"
             android:layout_gravity="center"
             android:alpha="0.7"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -189,23 +140,54 @@ android:background="@drawable/background">
             android:gravity="center">
 
             <ImageView
-                android:id="@+id/twitter"
+                android:id="@+id/loginPageTwitterButton"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="12dp"
-                android:background="@drawable/twitter"/>
+                android:background="@drawable/twitter_x_logo"/>
             <ImageView
-                android:id="@+id/google"
+                android:id="@+id/loginPageGoogleButton"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="12dp"
-                android:background="@drawable/google"/>
+                android:background="@drawable/google_logo"/>
             <ImageView
-                android:id="@+id/facebook"
+                android:id="@+id/loginPageAppleButton"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="12dp"
-                android:background="@drawable/facebook"/>
+                android:background="@drawable/apple_logo"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/don_t_have_an_account"
+                android:alpha="0.7"/>
+
+            <Button
+                android:id="@+id/loginPageRegisterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@color/customcolour1"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:padding="0dp"
+                android:paddingStart="3dp"
+                android:paddingEnd="3dp"
+                android:clickable="true"
+                android:focusable="true"/>
         </LinearLayout>
 
     </LinearLayout>
