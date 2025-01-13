@@ -40,7 +40,7 @@
             app:layout_constraintStart_toEndOf="@+id/locationName"
             android:layout_margin="10dp"
             android:id="@+id/starRatingImage"
-            android:layout_width="50dp"
+            android:layout_width="80dp"
             android:layout_height="50dp"
             android:hint="star rating placed here"
         />
@@ -50,7 +50,7 @@
             app:layout_constraintStart_toEndOf="@+id/locationName"
             android:layout_margin="10dp"
             android:id="@+id/priceRatingImage"
-            android:layout_width="50dp"
+            android:layout_width="80dp"
             android:layout_height="50dp"
             android:hint="star rating placed here"
             />
@@ -107,6 +107,17 @@
             app:layout_constraintTop_toBottomOf="@+id/topPlacesToVisit"
             android:layout_margin="10dp"
         />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{clickHandler::onFABClicked}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@android:drawable/ic_input_add"
+            android:layout_margin="10dp"
+            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
