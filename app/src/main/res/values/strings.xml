@@ -1,11 +1,17 @@
 <resources>
     <string name="app_name">Aero Atlas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="aero_atlas">Aero Atlas</string>
-    <string name="discover">Discover Your Dream Destination</string>
-    <string name="description">Picture yourself savoring fresh pastries in a quaint European café,
-        gazing at the Northern Lights in Iceland, or walking through vibrant markets in Marrakech.
-        These experiences are more than destinations; they’re memories waiting to be made.
-    </string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot Password?</string>
     <string name="LOGIN">LOGIN</string>
-    <string name="REGISTER">REGISTER</string>
+    <string name="or_login_with">Or login with</string>
+    <string name="name_example_com">name@example.com</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="register">Register!</string>
+    <string name="please_enter_your_details">Please enter your details</string>
+    <string name="welcome_to_aeroatlas">Welcome to AeroAtlas!</string>
 </resources>
