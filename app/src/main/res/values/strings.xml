@@ -2,4 +2,14 @@
     <string name="app_name">Aero Atlas</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="aero_atlas">Aero Atlas</string>
+    <string name="login">Login</string>
+    <string name="already_have_an_account_sign_in">Already have an account? Sign in</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="LOGIN">LOGIN</string>
+    <string name="or_login_with">Or login with</string>
+    <string name="name_example_com">name@example.com</string>
 </resources>
