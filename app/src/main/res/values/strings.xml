@@ -12,4 +12,6 @@
     <string name="register">Register!</string>
     <string name="please_enter_your_details">Please enter your details</string>
     <string name="welcome_to_aeroatlas">Welcome to AeroAtlas!</string>
+    <string name="cover">cover</string>
+    <string name="landmark_placeholder">landmark placeholder</string>
 </resources>
