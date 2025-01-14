@@ -38,7 +38,7 @@ public class FlightSelectorFragment extends Fragment {
                 month = month +1 ;
                 String date = makeDateString(day,month,year);
             }
-        }
+        };
     }
 
     private String makeDateString(int day, int month, int year) {
