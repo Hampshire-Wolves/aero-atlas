@@ -77,8 +77,8 @@
                 <TextView
                     android:layout_width="243dp"
                     android:layout_height="wrap_content"
-                    android:justificationMode="inter_word"
                     android:alpha="0.7"
+                    android:justificationMode="inter_word"
                     android:text="@string/description_randomizer" />
             </LinearLayout>
 
@@ -103,15 +103,6 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="8dp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/register"
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:text="@string/BLUE"
-                    android:backgroundTint="#2196F3"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="30dp"/>
             </LinearLayout>
 
             <View
