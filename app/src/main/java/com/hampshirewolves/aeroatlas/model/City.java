@@ -18,8 +18,8 @@ public class City extends BaseObservable implements Parcelable {
     private String description;
     private String imageUrl;   //Does this need to be an IMG?
     private String country;
-    private String lat;
-    private String lng;
+    private Double lat;
+    private Double lng;
     private String iataCode;
     private String starRating; //Enum
     private String priceRating; //Enum
@@ -30,7 +30,7 @@ public class City extends BaseObservable implements Parcelable {
     }
 
     public City(Long id, String name, String description, String imageUrl, String country,
-                String lat, String lng, String iataCode, String starRating,
+                Double lat, Double lng, String iataCode, String starRating,
                 String priceRating, LocalDateTime createdAt, LocalDateTime modifiedAt) {
         this.id = id;
         this.name = name;
@@ -56,8 +56,8 @@ public class City extends BaseObservable implements Parcelable {
         description = in.readString();
         imageUrl = in.readString();
         country = in.readString();
-        lat = in.readString();
-        lng = in.readString();
+        lat = Double.valueOf(in.readString());
+        lng = Double.valueOf(in.readString());
         iataCode = in.readString();
         starRating = in.readString();
         priceRating = in.readString();
@@ -97,8 +97,8 @@ public class City extends BaseObservable implements Parcelable {
         dest.writeString(description);
         dest.writeString(imageUrl);
         dest.writeString(country);
-        dest.writeString(lat);
-        dest.writeString(lng);
+        dest.writeString(String.valueOf(lat));
+        dest.writeString(String.valueOf(lng));
         dest.writeString(iataCode);
         dest.writeString(starRating);
         dest.writeString(priceRating);
@@ -124,11 +124,11 @@ public class City extends BaseObservable implements Parcelable {
         return country;
     }
     @Bindable
-    public String getLat() {
+    public Double getLat() {
         return lat;
     }
     @Bindable
-    public String getLng() {
+    public Double getLng() {
         return lng;
     }
     @Bindable
