@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.navigation.NavigationBarView;
+import com.hampshirewolves.aeroatlas.homepage.HomepageFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
@@ -29,16 +30,17 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
     }
 
-//    Declare each fragment here i.e homepage, city view, etc
-
+//   TODO  Declare each fragment here i.e homepage, city view, etc
+HomepageFragment homepageFragment = new HomepageFragment();
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         if (item.getItemId() == R.id.homebutton)
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.baseFragment, FRAGMENT_NAME)
+                    .replace(R.id.baseFragment, homepageFragment)
                     .commit();
-        return false;
+
+        return true;
     }
 }
