@@ -115,7 +115,7 @@
             android:contentDescription="back button to return to homepage"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:src="@android:drawable/ic_input_add"
+            android:src="@drawable/arrow_left"
             android:layout_margin="10dp"
             android:id="@+id/floatingActionBackButton"
             />
