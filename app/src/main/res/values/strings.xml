@@ -2,9 +2,9 @@
     <string name="app_name">Aero Atlas</string>
     <string name="aero_atlas">Aero Atlas</string>
     <string name="discover">Discover Your Dream Destination</string>
-
+    <string name="spin">Spin The Globe, Find Your Next Destination!</string>
     <string name="description_randomizer">
-        Don’t hold back — your next unforgettable experience could be just a flight away. Try a random city.
+        Your unforgettable experience is just a flight away.\nTry a random city.
         </string>
-    <string name="GREEN">Spin The Globe, Find Your Next Destination!</string>
+    <string name="GREEN">Find Your Next Getaway</string>
 </resources>

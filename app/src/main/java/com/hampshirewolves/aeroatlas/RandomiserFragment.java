@@ -61,8 +61,8 @@ public class RandomiserFragment extends Fragment {
     }
 
     private void openMockCityPage(String cityName) {
-        // Create an Intent to start MockCityPage activity
-        Intent intent = new Intent(requireContext(), MockCityPage.class);
+        // Create an Intent to start CityPage activity
+        Intent intent = new Intent(requireContext(), CityPage.class);
         intent.putExtra("CITY_NAME", cityName);
         startActivity(intent);
     }
