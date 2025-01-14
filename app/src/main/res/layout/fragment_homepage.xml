@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".homepage.HomepageFragment">
+
+<SearchView
+    android:id="@+id/citysearchbar"
+    android:layout_width="325dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="80dp"
+    android:layout_marginStart="15dp"
+    android:queryHint="Search Cities ..."
+    android:background="@drawable/citysearchbarbkg"
+    android:backgroundTint="#D1D1D1"
+    />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cityrecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="150dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        />
+
+
+
+</FrameLayout>
+</layout>
