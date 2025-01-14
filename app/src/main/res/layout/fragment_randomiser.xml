@@ -7,13 +7,6 @@
     tools:context=".RandomiserFragment"
     android:background="@drawable/background">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.7"
-        android:background="@color/customcolour1" >
-    </RelativeLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,11 +27,6 @@
             android:src="@drawable/skyscraper_town_svgrepo_com"
             android:layout_gravity="center" />
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="15sp"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
@@ -89,34 +77,38 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
-                android:layout_marginTop="16dp">
+                android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/login"
-                    android:layout_width="0dp"
+                    android:id="@+id/randomise_button"
+                    android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:text="@string/GREEN"
+                    android:layout_gravity="center"
+                    android:layout_margin="25dp"
                     android:backgroundTint="@color/customcolour1"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="8dp" />
+                    android:text="Find Your Next Getaway"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/register"
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:text="@string/BLUE"
-                    android:backgroundTint="#2196F3"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="30dp"/>
             </LinearLayout>
 
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
+
+            <!-- Random City Text -->
+            <TextView
+                android:id="@+id/random_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_marginTop="0dp"
+                android:textSize="20sp"
+                android:textColor="@android:color/black" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

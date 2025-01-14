@@ -12,12 +12,8 @@
     <string name="spin">Spin The Globe, Find Your Next Destination!</string>
     <string name="description_randomizer">Picture yourself exploring ancient temples in Kyoto,
         soaking in the serene beauty of the Swiss Alps,
-        or dancing under the stars in a lively Brazilian carnival.
-        Every moment is a story yet to be lived,
-        and the world is full of adventures waiting for you.
-        Life is fleeting, and every journey is a memory in the making.
-        Don’t hold back — your next unforgettable experience could be just a flight away.
-        Fly today or never.</string>
+        or dancing under the stars in a lively Brazilian carnival. Find a random location from our list of cities:
+    </string>
     <string name="LOGIN">LOGIN</string>
     <string name="REGISTER">REGISTER</string>
     <string name="GREEN">GREEN PILL?</string>

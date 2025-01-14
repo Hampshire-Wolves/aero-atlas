@@ -1,13 +1,10 @@
 package com.hampshirewolves.aeroatlas;
 
 import android.os.Bundle;
-import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,45 +19,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize the mock places list
         initializeMockPlaces();
 
-        // Get references to UI elements
-        MaterialButton greenButton = findViewById(R.id.login);
-        MaterialButton blueButton = findViewById(R.id.register);
-        TextView randomCityTextView = findViewById(R.id.random_city_name);
-
-        // Add click listener for the green button
-        greenButton.setOnClickListener(v -> {
-            // Hide both buttons
-            greenButton.setVisibility(View.GONE);
-            blueButton.setVisibility(View.GONE);
-
-            // Show a random city name in the TextView
+        Button randomiseButton = findViewById(R.id.randomise_button);
+        randomiseButton.setOnClickListener(v -> {
             String randomCity = getRandomCity();
-            randomCityTextView.setText(randomCity);
-
-            // Make the TextView visible
-            randomCityTextView.setVisibility(View.VISIBLE);
-        });
-
-        // Add click listener for the blue button
-        blueButton.setOnClickListener(v -> {
-
-            // Hide both buttons
-            greenButton.setVisibility(View.GONE);
-            blueButton.setVisibility(View.GONE);
-
-            // Show a random city name in the TextView
-            String randomCity = getRandomCity();
-            randomCityTextView.setText(randomCity);
-
-            // Make the TextView visible
-            randomCityTextView.setVisibility(View.VISIBLE);
+            openMockCityPage(randomCity);
         });
     }
 
-    // Initialize the list of mock places
     private void initializeMockPlaces() {
         mockPlaces = new ArrayList<>();
         mockPlaces.add("Eiffel Tower, Paris, France");
@@ -71,9 +38,17 @@ public class MainActivity extends AppCompatActivity {
         mockPlaces.add("Sydney Opera House, Sydney, Australia");
     }
 
-    // Get a random city name from the list
     private String getRandomCity() {
         Random random = new Random();
         return mockPlaces.get(random.nextInt(mockPlaces.size()));
+    }
+
+    private void openMockCityPage(String cityName) {
+        // Set the content view to the Mock City Page layout
+        setContentView(R.layout.activity_mock_city_page);
+
+        // Update the random city name on Mock City Page
+        TextView cityTextView = findViewById(R.id.city_name);
+        cityTextView.setText(cityName);
     }
 }
