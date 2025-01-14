@@ -1,14 +1,11 @@
 <resources>
     <string name="app_name">Aero Atlas</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="aero_atlas">Aero Atlas</string>
     <string name="discover">Discover Your Dream Destination</string>
     <string name="description">Picture yourself savoring fresh pastries in a quaint European café,
         gazing at the Northern Lights in Iceland, or walking through vibrant markets in Marrakech.
         These experiences are more than destinations; they’re memories waiting to be made.
-        Life is short, and the world is vast. Why wait when your next great adventure could be just a flight away?
-        Fly today or never.</string>
+    </string>
     <string name="LOGIN">LOGIN</string>
     <string name="REGISTER">REGISTER</string>
 </resources>
