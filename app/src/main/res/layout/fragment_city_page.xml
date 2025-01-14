@@ -11,7 +11,8 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        >
 
         <TextView
             app:layout_constraintTop_toBottomOf="@+id/locationImage"
@@ -24,6 +25,7 @@
             android:layout_gravity="start"
             android:hint="Enter Location Name Here"
             android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif"
             />
 
         <ImageView
@@ -59,15 +61,18 @@
             android:id="@+id/ViewFlightInformationButton"
             app:layout_constraintTop_toBottomOf="@+id/locationName"
             app:layout_constraintStart_toStartOf="match_parent"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="20dp"
             android:layout_margin="10dp"
             android:drawableTint="#ff0000"
             android:text="View Flight Information"
+            android:textSize="20sp"
             tools:layout_editor_absoluteX="104dp"
             tools:layout_editor_absoluteY="308dp"
-            android:backgroundTint="@color/customcolour1"/>
+            android:backgroundTint="@color/customcolour1"
+            android:fontFamily="sans-serif"
+            />
 
         <TextView
             app:layout_constraintTop_toBottomOf="@+id/ViewFlightInformationButton"
@@ -78,7 +83,9 @@
             android:textStyle="bold"
             android:textSize="25sp"
             android:layout_margin="10dp"
-            android:text="Description" />
+            android:text="Description"
+            android:fontFamily="sans-serif"
+            />
 
         <TextView
             app:layout_constraintTop_toBottomOf="@+id/locationDescriptionHeader"
@@ -88,7 +95,9 @@
             android:layout_gravity="start"
             android:textSize="20sp"
             android:layout_margin="10dp"
-            android:hint="Description of City entered here" />
+            android:hint="Description of City entered here"
+            android:fontFamily="sans-serif"
+            />
 
         <TextView
             app:layout_constraintTop_toBottomOf="@+id/locationDescriptionText"
@@ -99,7 +108,8 @@
             android:textStyle="bold"
             android:textSize="25sp"
             android:layout_margin="10dp"
-            android:text="Top places to visit:" />
+            android:text="Top places to visit:"
+            android:fontFamily="sans-serif"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewTopPlacesToVisit"
