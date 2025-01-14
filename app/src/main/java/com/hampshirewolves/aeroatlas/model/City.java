@@ -56,8 +56,8 @@ public class City extends BaseObservable implements Parcelable {
         description = in.readString();
         imageUrl = in.readString();
         country = in.readString();
-        lat = Double.valueOf(in.readString());
-        lng = Double.valueOf(in.readString());
+        lat = in.readDouble();
+        lng = in.readDouble();
         iataCode = in.readString();
         starRating = in.readString();
         priceRating = in.readString();
@@ -97,8 +97,8 @@ public class City extends BaseObservable implements Parcelable {
         dest.writeString(description);
         dest.writeString(imageUrl);
         dest.writeString(country);
-        dest.writeString(String.valueOf(lat));
-        dest.writeString(String.valueOf(lng));
+        dest.writeDouble(lat);
+        dest.writeDouble(lng);
         dest.writeString(iataCode);
         dest.writeString(starRating);
         dest.writeString(priceRating);
