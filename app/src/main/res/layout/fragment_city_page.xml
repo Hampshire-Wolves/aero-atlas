@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+    <variable
+        name="cityinfo"
+        type="com.hampshirewolves.aeroatlas.model.City" />
+    </data>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".citypage.CityPageFragment">
+
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,14 +33,16 @@
             android:hint="Enter Location Name Here"
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif"
+            android:text="@{cityinfo.name}"
             />
 
         <ImageView
-            app:layout_constraintTop_toTopOf="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/locationImage"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:hint="Image of City placed here"
+            android:src="@{cityinfo.imageUrl}"
             android:layout_margin="10dp"
         />
 
@@ -60,7 +69,7 @@
         <Button
             android:id="@+id/ViewFlightInformationButton"
             app:layout_constraintTop_toBottomOf="@+id/locationName"
-            app:layout_constraintStart_toStartOf="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="20dp"
@@ -97,6 +106,7 @@
             android:layout_margin="10dp"
             android:hint="Description of City entered here"
             android:fontFamily="sans-serif"
+            android:text="@{cityinfo.description}"
             />
 
         <TextView
@@ -137,3 +147,4 @@
 
 
 </FrameLayout>
+</layout>
