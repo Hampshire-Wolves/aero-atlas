@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="cityinfo"
+            type="com.hampshirewolves.aeroatlas.model.City" />
+    </data>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -23,9 +29,10 @@
                 android:id="@+id/placesToVisitCoverImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/London_eye"
+                android:src="@drawable/london_eye"
                 android:adjustViewBounds="true"
-                android:contentDescription="@string/cover"/>
+                android:contentDescription="@string/cover"
+                />
 
             <TextView
                 android:id="@+id/placesToVisitCoverImageTitle"
@@ -43,3 +50,4 @@
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>
+</layout>
