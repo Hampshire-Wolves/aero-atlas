@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 
 import com.hampshirewolves.aeroatlas.R;
@@ -26,6 +27,8 @@ public class FlightSelectorFragment extends Fragment {
     private DatePickerDialog datePickerDialog;
     private Button departureButton;
 
+    private CheckBox checkBox;
+
     public FlightSelectorFragment() {
         // Required empty public constructor
     }
@@ -36,6 +39,15 @@ public class FlightSelectorFragment extends Fragment {
         initDatePicker();
         departureButton = departureButton.findViewById(R.id.departurePickerDate);
         departureButton.setText(getTodaysDate());
+
+        checkBox.findViewById(R.id.checkbox);
+        checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked){
+                departureButton.setVisibility(View.VISIBLE);
+            } else {
+                departureButton.setVisibility(View.INVISIBLE);
+            }
+        });
     }
 
     private String getTodaysDate() {
