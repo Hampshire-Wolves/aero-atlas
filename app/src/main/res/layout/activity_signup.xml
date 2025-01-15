@@ -1,193 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/main"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".SignupActivity">
-
-<androidx.cardview.widget.CardView
-    android:id="@+id/card_view"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_alignParentBottom="true">
+    tools:context=".SignupActivity">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp">
-
-        <ImageView
-            android:id="@+id/signupPageBackButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/arrow_left"
-            android:clickable="true"
-            android:focusable="true"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="38dp"
-        android:orientation="vertical">
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/create_account"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/customcolour1"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/please_enter_your_details"
-            android:alpha="0.7"
-            android:layout_gravity="center"/>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"/>
-
-        <EditText
-            android:id="@+id/signupPageEmailInputBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:drawableEnd="@drawable/email_outline"
-            android:background="@drawable/rounded_corner"
-            android:padding="15dp"
-            android:hint="@string/email_address"/>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"/>
-
-        <EditText
-            android:id="@+id/signupPagePasswordInputBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:drawableEnd="@drawable/lock_outline"
-            android:background="@drawable/rounded_corner"
-            android:padding="13dp"
-            android:hint="@string/password"/>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"/>
-
-        <EditText
-            android:id="@+id/signupPageConfirmPasswordInputBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:drawableEnd="@drawable/lock_outline"
-            android:background="@drawable/rounded_corner"
-            android:padding="13dp"
-            android:hint="@string/confirm_password"/>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"/>
-
-        <ProgressBar
-            android:id="@+id/signupProgressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_gravity="center"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/signupPageSignupButton"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/sign_up"
-            android:backgroundTint="@color/customcolour1"/>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/or_signup_with"
-            android:layout_gravity="center"
-            android:alpha="0.7"/>
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="10dp"/>
+        android:layout_alignParentBottom="true">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:layout_height="match_parent"
+            android:padding="10dp">
 
             <ImageView
-                android:id="@+id/signupPageTwitterButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="12dp"
-                android:background="@drawable/twitter_x_logo"/>
-            <ImageView
-                android:id="@+id/signupPageGoogleButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="12dp"
-                android:background="@drawable/google_logo"/>
-            <ImageView
-                android:id="@+id/signupPageAppleButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="12dp"
-                android:background="@drawable/apple_logo"/>
+                android:id="@+id/signupPageBackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/arrow_left" />
         </LinearLayout>
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="10dp"/>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="38dp">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="40dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/already_have_an_account"
-                android:alpha="0.7"/>
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif"
+                android:text="@string/create_account"
+                android:textColor="@color/customcolour1"
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/signupPageRedirectToLoginButton"
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/login"
-                android:backgroundTint="@android:color/transparent"
-                android:textColor="@color/customcolour1"
-                android:minHeight="0dp"
-                android:minWidth="0dp"
-                android:padding="0dp"
-                android:paddingStart="3dp"
-                android:paddingEnd="3dp"
-                android:clickable="true"
-                android:focusable="true"/>
-        </LinearLayout>
+                android:layout_gravity="center"
+                android:alpha="0.7"
+                android:text="@string/please_enter_your_details" />
 
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" />
+
+            <EditText
+                android:id="@+id/signupPageEmailInputBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:drawableEnd="@drawable/email_outline"
+                android:hint="@string/email_address"
+                android:inputType="textEmailAddress"
+                android:padding="15dp" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="30dp" />
+
+            <EditText
+                android:id="@+id/signupPagePasswordInputBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:drawableEnd="@drawable/lock_outline"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:padding="13dp" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="30dp" />
+
+            <EditText
+                android:id="@+id/signupPageConfirmPasswordInputBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:drawableEnd="@drawable/lock_outline"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:padding="13dp" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="40dp" />
+
+            <ProgressBar
+                android:id="@+id/signupProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/signupPageSignupButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/customcolour1"
+                android:text="@string/sign_up" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:alpha="0.7"
+                android:text="@string/or_signup_with" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/signupPageTwitterButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/twitter_x_logo" />
+
+                <ImageView
+                    android:id="@+id/signupPageGoogleButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/google_logo" />
+
+                <ImageView
+                    android:id="@+id/signupPageAppleButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/apple_logo" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.7"
+                    android:text="@string/already_have_an_account" />
+
+                <Button
+                    android:id="@+id/signupPageRedirectToLoginButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="3dp"
+                    android:text="@string/login"
+                    android:textColor="@color/customcolour1" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>
