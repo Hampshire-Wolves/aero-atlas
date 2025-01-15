@@ -10,7 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.hampshirewolves.aeroatlas.R;
-import com.hampshirewolves.aeroatlas.model.City;
+import com.hampshirewolves.aeroatlas.model.CityAttractions;
+import com.hampshirewolves.aeroatlas.ui.mainactivity.CityAttractionsAdapter;
 
 import java.util.List;
 
