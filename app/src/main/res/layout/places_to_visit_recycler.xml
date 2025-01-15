@@ -2,8 +2,8 @@
 <layout>
     <data>
         <variable
-            name="cityinfo"
-            type="com.hampshirewolves.aeroatlas.model.City" />
+            name="cityattractionsinfo"
+            type="com.hampshirewolves.aeroatlas.model.CityAttractions" />
     </data>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
