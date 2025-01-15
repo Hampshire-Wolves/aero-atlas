@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.hampshirewolves.aeroatlas.Handlers.UIHandler;
 
 public class LoginActivity extends AppCompatActivity {
     EditText loginPageEmailInputBox, loginPagePasswordInputBox;
@@ -87,15 +88,13 @@ public class LoginActivity extends AppCompatActivity {
 
                 //checks if email and password is empty
                 if (TextUtils.isEmpty(email)){
-                    progressBar.setVisibility(View.GONE);
-                    Toast.makeText(LoginActivity.this, "Email cannot be empty", Toast.LENGTH_SHORT).show();
+                    UIHandler.handleValidationError(progressBar, LoginActivity.this, "Email cannot be empty");
                     return;
                 }
 
                 if (TextUtils.isEmpty(password)){
-                    progressBar.setVisibility(View.GONE);
-                    Toast.makeText(LoginActivity.this, "Password cannot be empty", Toast.LENGTH_SHORT).show();
-                    return;
+                    UIHandler.handleValidationError(progressBar, LoginActivity.this, "Password cannot be empty");
+                  return;
                 }
 
                 //call sign in with email and password
