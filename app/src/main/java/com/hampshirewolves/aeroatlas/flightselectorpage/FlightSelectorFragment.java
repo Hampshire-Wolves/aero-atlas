@@ -1,9 +1,12 @@
 package com.hampshirewolves.aeroatlas.flightselectorpage;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +15,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 
 import com.hampshirewolves.aeroatlas.R;
+import com.hampshirewolves.aeroatlas.ui.mainactivity.MainActivityViewModel;
+
+import java.util.Calendar;
+import java.util.Objects;
 
 
 public class FlightSelectorFragment extends Fragment {
@@ -22,6 +29,24 @@ public class FlightSelectorFragment extends Fragment {
     public FlightSelectorFragment() {
         // Required empty public constructor
     }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initDatePicker();
+        departureButton = departureButton.findViewById(R.id.departurePickerDate);
+        departureButton.setText(getTodaysDate());
+    }
+
+    private String getTodaysDate() {
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        month = month + 1;
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+
+        return makeDateString(day, month, year);
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,16 +62,66 @@ public class FlightSelectorFragment extends Fragment {
             public void onDateSet(DatePicker datePicker, int day, int month, int year) {
                 month = month +1 ;
                 String date = makeDateString(day,month,year);
+                departureButton.setText(date);
             }
+
         };
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+
+        datePickerDialog = new DatePickerDialog(this.getContext(),dateSetListener,year,month,day);
+        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
     }
 
     private String makeDateString(int day, int month, int year) {
-        return day + " " + month + " " + year;
+        return getMonthFormat(month) + " " + day + " " + year;
     }
 
-    ;
+    private String getMonthFormat(int month) {
+        if (month==1){
+            return "JAN";
+        }
+        if (month==2){
+            return "FEB";
+        }
+        if (month==3){
+            return "MAR";
+        }
+        if (month==4){
+            return "APR";
+        }
+        if (month==5){
+            return "MAY";
+        }
+        if (month==6){
+            return "JUN";
+        }
+        if (month==7){
+            return "JUL";
+        }
+        if (month==8){
+            return "AUG";
+        }
+        if (month==9){
+            return "SEP";
+        }
+        if (month==10){
+            return "OCT";
+        }
+        if (month==11){
+            return "NOV";
+        }
+        if (month==12){
+            return "DEC";
+        }
+
+        return "invalid entry please check";
+    }
+
 
     public void departureDatePicker(View view) {
+        datePickerDialog.show();
     }
 }
