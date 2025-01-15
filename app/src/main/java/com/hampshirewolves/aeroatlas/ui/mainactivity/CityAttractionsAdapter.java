@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas.citypage;
+package com.hampshirewolves.aeroatlas.ui.mainactivity;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,12 +10,12 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hampshirewolves.aeroatlas.R;
-import com.hampshirewolves.aeroatlas.databinding.CityrecyclerBinding;
+import com.hampshirewolves.aeroatlas.databinding.PlacesToVisitRecyclerBinding;
 import com.hampshirewolves.aeroatlas.homepage.RecyclerViewInterface;
-import com.hampshirewolves.aeroatlas.model.City;
-import com.hampshirewolves.aeroatlas.ui.mainactivity.CityAdapter;
+import com.hampshirewolves.aeroatlas.model.CityAttractions;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CityAttractionsAdapter extends RecyclerView.Adapter<CityAttractionsAdapter.CityAttractionsViewHolder> {
 
@@ -34,9 +34,9 @@ public class CityAttractionsAdapter extends RecyclerView.Adapter<CityAttractions
     @Override
     public CityAttractionsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        CityAttractionsRecyclerBinding binding = DataBindingUtil.inflate(
+        PlacesToVisitRecyclerBinding binding = DataBindingUtil.inflate(
                 LayoutInflater.from(parent.getContext()),
-                R.layout.card_cell_places_to_visit,
+                R.layout.places_to_visit_recycler,
                 parent,
                 false
 
@@ -48,7 +48,7 @@ public class CityAttractionsAdapter extends RecyclerView.Adapter<CityAttractions
     @Override
     public void onBindViewHolder(@NonNull CityAttractionsViewHolder holder, int position) {
         CityAttractions cityAttractions = cityAttractionsList.get(position);
-        holder.cityAttractionsRecyclerBinding.setCityAttractionsList(cityAttractions);
+        holder.cityAttractionsRecyclerBinding.setCityattractionsinfo(cityAttractions);
     }
 
     @Override
@@ -64,9 +64,9 @@ public class CityAttractionsAdapter extends RecyclerView.Adapter<CityAttractions
 
     public static class CityAttractionsViewHolder extends RecyclerView.ViewHolder {
 
-        CityAttractionsRecyclerBinding cityAttractionsRecyclerBinding;
+        PlacesToVisitRecyclerBinding cityAttractionsRecyclerBinding;
 
-        public CityAttractionsViewHolder(CityAttractionsRecyclerBinding cityAttractionsRecyclerBinding, RecyclerViewInterface recyclerViewInterface) {
+        public CityAttractionsViewHolder(PlacesToVisitRecyclerBinding cityAttractionsRecyclerBinding, RecyclerViewInterface recyclerViewInterface) {
             super(cityAttractionsRecyclerBinding.getRoot());
             this.cityAttractionsRecyclerBinding = cityAttractionsRecyclerBinding;
 
