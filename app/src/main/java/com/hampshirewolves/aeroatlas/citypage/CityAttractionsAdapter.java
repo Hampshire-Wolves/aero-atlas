@@ -48,7 +48,7 @@ public class CityAttractionsAdapter extends RecyclerView.Adapter<CityAttractions
     @Override
     public void onBindViewHolder(@NonNull CityAttractionsViewHolder holder, int position) {
         CityAttractions cityAttractions = cityAttractionsList.get(position);
-        holder.cityAttractionsBinding.setCityAttractionsList(cityAttractions);
+        holder.cityAttractionsRecyclerBinding.setCityAttractionsList(cityAttractions);
     }
 
     @Override
@@ -56,15 +56,15 @@ public class CityAttractionsAdapter extends RecyclerView.Adapter<CityAttractions
         return cityAttractionsList.size();
     }
 
-    public void setFilteredList(List<CityAttractions> filteredList) {
+    public void setFilteredList(ArrayList<CityAttractions> filteredList) {
         this.cityAttractionsList = filteredList;
         notifyDataSetChanged();
     }
 
 
-    public static class CityAttractionsViewHolder extends RecyclerView.ViewHolder{
+    public static class CityAttractionsViewHolder extends RecyclerView.ViewHolder {
 
-        CityAttractionsBinding cityAttractionsBinding;
+        CityAttractionsRecyclerBinding cityAttractionsRecyclerBinding;
 
         public CityAttractionsViewHolder(CityAttractionsRecyclerBinding cityAttractionsRecyclerBinding, RecyclerViewInterface recyclerViewInterface) {
             super(cityAttractionsRecyclerBinding.getRoot());
@@ -76,11 +76,12 @@ public class CityAttractionsAdapter extends RecyclerView.Adapter<CityAttractions
                     if (recyclerViewInterface != null) {
                         int position = getAdapterPosition();
 
-                        if (position != RecyclerView.NO_POSITION){
+                        if (position != RecyclerView.NO_POSITION) {
                             recyclerViewInterface.onItemClick(position);
                         }
                     }
                 }
             });
         }
+    }
 }
