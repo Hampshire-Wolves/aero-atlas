@@ -13,7 +13,4 @@ public interface AeroAtlasApiService {
     @GET //Needs Endpoint
     Call<List<City>> getAllCities();
 
-    @GET// Needs Endpoint
-    Call<List<CityAttractions>> getAllCityAttractions();
-
 }
