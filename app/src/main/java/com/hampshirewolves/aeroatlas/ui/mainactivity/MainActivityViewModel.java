@@ -16,16 +16,13 @@ import java.util.List;
 public class MainActivityViewModel extends AndroidViewModel {
 
 private CityRepository cityRepository;
-private CityAttractionsRepository cityAttractionsRepository;
 
     public MainActivityViewModel(@NonNull Application application) {
         super(application);
         this.cityRepository = new CityRepository(application);
-        this.cityAttractionsRepository = new CityAttractionsRepository(application);
     }
 
     public LiveData<List<City>> getAllCities() {
         return cityRepository.getMutableLiveData();
     }
-    public LiveData<List<CityAttractions>> getAllCityAttractions() {return cityAttractionsRepository.getMutableLiveData();}
 }
