@@ -4,6 +4,9 @@
     <variable
         name="cityinfo"
         type="com.hampshirewolves.aeroatlas.model.City" />
+    <variable
+        name="clickHandler"
+        type="com.hampshirewolves.aeroatlas.ui.mainactivity.CityPageClickHandlers" />
     </data>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
