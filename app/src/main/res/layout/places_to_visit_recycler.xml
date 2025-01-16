@@ -27,9 +27,9 @@
 
             <ImageView
                 android:id="@+id/placesToVisitCoverImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/london_eye"
+                android:layout_width="400dp"
+                android:layout_height="200dp"
+                android:src="@{cityattractionsinfo.imageUrl}"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/cover"
                 />
@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="@string/landmark_placeholder"
+                android:text="@{cityattractionsinfo.name}"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
