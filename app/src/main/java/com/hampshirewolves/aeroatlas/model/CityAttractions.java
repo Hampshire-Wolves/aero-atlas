@@ -86,7 +86,7 @@ public class CityAttractions extends BaseObservable implements Parcelable {
     public String getName() {return name;}
 
     @Bindable
-    public String city() {return city;}
+    public String getCity() {return city;}
 
     @Bindable
     public String getImageUrl()  {return imageUrl;}
