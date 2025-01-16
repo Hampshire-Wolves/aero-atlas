@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas.ui.mainactivity;
+package com.hampshirewolves.aeroatlas.ui.clickhandlers;
 
 import android.content.Context;
 import android.content.Intent;
