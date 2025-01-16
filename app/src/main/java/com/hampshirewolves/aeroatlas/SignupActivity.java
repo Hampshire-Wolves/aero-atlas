@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.hampshirewolves.aeroatlas.Handlers.FirebaseErrorHandler;
 import com.hampshirewolves.aeroatlas.Handlers.UIHandler;
 
 public class SignupActivity extends AppCompatActivity {
@@ -109,11 +110,14 @@ public class SignupActivity extends AppCompatActivity {
                             finish();
 
                         } else {
-                            Toast.makeText(SignupActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                            Exception exception = task.getException();
+                            if (exception != null) {
+                                FirebaseErrorHandler.handleFirebaseException(exception, SignupActivity.this);
+                            }
                         }
                     }
                 });
             }
         });
     }
-}
+    }
