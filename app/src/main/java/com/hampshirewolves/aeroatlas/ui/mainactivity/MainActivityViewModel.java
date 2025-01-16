@@ -7,6 +7,8 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.hampshirewolves.aeroatlas.model.City;
+import com.hampshirewolves.aeroatlas.model.CityAttractions;
+import com.hampshirewolves.aeroatlas.model.CityAttractionsRepository;
 import com.hampshirewolves.aeroatlas.model.CityRepository;
 
 import java.util.List;
@@ -14,13 +16,16 @@ import java.util.List;
 public class MainActivityViewModel extends AndroidViewModel {
 
 private CityRepository cityRepository;
+private CityAttractionsRepository cityAttractionsRepository;
 
     public MainActivityViewModel(@NonNull Application application) {
         super(application);
         this.cityRepository = new CityRepository(application);
+        this.cityAttractionsRepository = new CityAttractionsRepository(application);
     }
 
     public LiveData<List<City>> getAllCities() {
         return cityRepository.getMutableLiveData();
     }
+    public LiveData<List<CityAttractions>> getAllCityAttractions() {return cityAttractionsRepository.getMutableLiveData();}
 }
