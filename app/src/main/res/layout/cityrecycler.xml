@@ -30,6 +30,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:src="@{cityList.imageUrl}"
         />
 
     <TextView
@@ -40,7 +41,8 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="15dp"
         android:paddingTop="5dp"
-        android:text="City Name here"
+        android:hint="City Name here"
+        android:text="@{cityList.name}"
         android:textSize="25sp"
         />
 
@@ -51,10 +53,10 @@
         app:layout_constraintTop_toBottomOf="@+id/cityName"
         app:layout_constraintStart_toStartOf="@+id/cityName"
         android:paddingTop="3dp"
-        android:text="Country Name here"
+        android:hint="Country Name here"
+        android:text="@{cityList.country}"
         android:textColor="@android:color/darker_gray"
         />
-
 
 
 
