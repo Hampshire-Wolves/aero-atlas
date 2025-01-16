@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".flightselectorpage.FlightSelectorFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -142,9 +145,8 @@
             android:id="@+id/HeaderBestOutGoingFlights"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="50dp"
-            android:text="Best Outgoing Flights"
+            android:text="Best Outgoing Flights:"
             android:gravity="start"
             android:textSize="12sp"
             android:textStyle="bold"
@@ -156,8 +158,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/AddReturnFlightButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HeaderBestOutGoingFlights"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
 
@@ -166,3 +176,4 @@
 
 
 </FrameLayout>
+</layout>
