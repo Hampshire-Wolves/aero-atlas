@@ -19,6 +19,7 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.hampshirewolves.aeroatlas.R;
+import com.hampshirewolves.aeroatlas.citypage.CityPageFragment;
 import com.hampshirewolves.aeroatlas.databinding.FragmentHomepageBinding;
 import com.hampshirewolves.aeroatlas.model.City;
 import com.hampshirewolves.aeroatlas.ui.mainactivity.CityAdapter;
@@ -122,7 +123,7 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
 
     @Override
     public void onItemClick(int position) {
-//        Intent intent = new Intent(this.getContext(), TODO - ADD NEW FRAGMENT NAME HERE)
+       Intent intent = new Intent(this.getContext(), CityPageFragment.class);
 
     }
 }
