@@ -133,8 +133,8 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{clickHandler::CLICK_HANDLER_TBC_Should_return_user_to_homepage_upon_click}"
             android:contentDescription="back button to return to homepage"
+            android:onClick="@{clickHandler::onBackBtnClicked}"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:src="@drawable/arrow_left"
