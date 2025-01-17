@@ -1,23 +1,21 @@
 package com.hampshirewolves.aeroatlas.homepage;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
-import android.widget.Toast;
 
 import com.hampshirewolves.aeroatlas.R;
 import com.hampshirewolves.aeroatlas.citypage.CityPageFragment;
@@ -42,26 +40,16 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
     private SearchView citysearchbar;
 
     private ArrayList<City> filteredList;
+    private CardView cardView;
 
 
-    public HomepageFragment() {
-        // Required empty public constructor
-    }
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public HomepageFragment() {}
 
-        mainActivityViewModel = new ViewModelProvider(this)
-                .get(MainActivityViewModel.class);
-
-
-    }
-
-    private void getAllCities(){
-        mainActivityViewModel.getAllCities().observe(this, new Observer<List<City>>() {
+    private void getAllCities() {
+        mainActivityViewModel.getAllCities().observe(getViewLifecycleOwner(), new Observer<List<City>>() {
             @Override
             public void onChanged(List<City> cities) {
-                cityList = (List<City>) cities;
+                cityList = cities;
 
                 displayInRecyclerView();
             }
@@ -69,12 +57,15 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
 
     }
 
-    private void displayInRecyclerView(){
-        recyclerView = fragmentHomepageBinding.cityrecyclerview;
+    private void displayInRecyclerView() {
+        recyclerView = fragmentHomepageBinding.homepageCityRecyclerView;
+
         cityAdapter = new CityAdapter(cityList, this, this.getContext());
         recyclerView.setAdapter(cityAdapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this.getContext());
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+
         cityAdapter.notifyDataSetChanged();
     }
 
@@ -82,15 +73,15 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-       fragmentHomepageBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_homepage, container, false);
-        return fragmentHomepageBinding.getRoot();
-    }
+        mainActivityViewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+        fragmentHomepageBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_homepage, container, false);
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState){
-        super.onViewCreated(view, savedInstanceState);
-        fragmentHomepageBinding.citysearchbar.clearFocus();
-        fragmentHomepageBinding.citysearchbar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        View view = fragmentHomepageBinding.getRoot();
+
+        getAllCities();
+
+        fragmentHomepageBinding.homepageCitySearchBar.clearFocus();
+        fragmentHomepageBinding.homepageCitySearchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
@@ -103,39 +94,29 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
             }
         });
 
+/*        CardView cardView = view.findViewById(R.id.cityListing);
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new CityPageFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                fragmentTransaction.replace(R.id.baseFragment, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });*/
+
+       return view;
     }
 
     private void filteredList(String newText){
 
-
-        if (cityList == null) {
-            Log.e("HomepageFragment", "City list is null");
-        }
-
-        filteredList = new ArrayList<>();
-
-        for (City city : cityList){
-            if (city.getName().toLowerCase().contains(newText.toLowerCase())) {
-                filteredList.add(city);
-            }
-        }
-        if (filteredList.isEmpty()) {
-            Toast.makeText(this.getContext(), "City Not found", Toast.LENGTH_SHORT).show();
-
-        } else {
-
-            // Update adapter with filtered data
-            if (cityAdapter != null) {
-                cityAdapter.setFilteredList(filteredList);
-            } else {
-                Log.e("HomepageFragment", "cityAdapter is null");
-            }
-        }
     }
 
     @Override
     public void onItemClick(int position) {
-       Intent intent = new Intent(this.getContext(), CityPageFragment.class);
-
     }
 }
