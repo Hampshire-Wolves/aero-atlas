@@ -10,7 +10,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hampshirewolves.aeroatlas.R;
-import com.hampshirewolves.aeroatlas.databinding.CityrecyclerBinding;
+import com.hampshirewolves.aeroatlas.databinding.CityItemLayoutBinding;
 import com.hampshirewolves.aeroatlas.homepage.RecyclerViewInterface;
 import com.hampshirewolves.aeroatlas.model.City;
 
@@ -35,9 +35,9 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder
     @Override
     public CityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        CityrecyclerBinding binding = DataBindingUtil.inflate(
+        CityItemLayoutBinding binding = DataBindingUtil.inflate(
                 LayoutInflater.from(parent.getContext()),
-                R.layout.cityrecycler,
+                R.layout.city_item_layout,
                 parent,
                 false
 
@@ -48,7 +48,7 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder
     @Override
     public void onBindViewHolder(@NonNull CityViewHolder holder, int position) {
         City city = cityList.get(position);
-        holder.cityrecyclerBinding.setCityList(city);
+        holder.cityItemLayoutBinding.setCityList(city);
     }
 
     @Override
@@ -63,13 +63,12 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder
 
 
     public static class CityViewHolder extends RecyclerView.ViewHolder {
+        CityItemLayoutBinding cityItemLayoutBinding;
 
-        CityrecyclerBinding cityrecyclerBinding;
 
-
-        public CityViewHolder(CityrecyclerBinding cityrecyclerBinding, RecyclerViewInterface recyclerViewInterface) {
-            super(cityrecyclerBinding.getRoot());
-            this.cityrecyclerBinding = cityrecyclerBinding;
+        public CityViewHolder(CityItemLayoutBinding cityItemLayoutBinding, RecyclerViewInterface recyclerViewInterface) {
+            super(cityItemLayoutBinding.getRoot());
+            this.cityItemLayoutBinding = cityItemLayoutBinding;
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
