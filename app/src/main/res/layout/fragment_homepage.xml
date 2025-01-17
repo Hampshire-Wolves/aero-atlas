@@ -20,14 +20,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cityrecyclerview"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="150dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:paddingBottom="15dp"
         />
-
-
 
 </FrameLayout>
 </layout>

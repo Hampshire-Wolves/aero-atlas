@@ -53,7 +53,7 @@ public class FlightAdapter extends RecyclerView.Adapter<FlightAdapter.FlightView
 
     public static class FlightViewHolder extends RecyclerView.ViewHolder {
 
-FlightsRecyclerBinding flightsRecyclerBinding;
+        FlightsRecyclerBinding flightsRecyclerBinding;
 
         public FlightViewHolder(FlightsRecyclerBinding flightsRecyclerBinding, RecyclerViewInterface recyclerViewInterface) {
             super(flightsRecyclerBinding.getRoot());
