@@ -13,7 +13,6 @@ import com.hampshirewolves.aeroatlas.profilepage.DiscoverPageFragment;
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     NavigationBarView bottomNavBar;
-    //   TODO  Declare each fragment here i.e homepage, city view, etc
     HomepageFragment homepageFragment = new HomepageFragment();
     DiscoverPageFragment discoverPageFragment = new DiscoverPageFragment();
 
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        if (item.getItemId() == R.id.homebutton) {
+        if (item.getItemId() == R.id.homebutton){
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.baseFragment, homepageFragment)
