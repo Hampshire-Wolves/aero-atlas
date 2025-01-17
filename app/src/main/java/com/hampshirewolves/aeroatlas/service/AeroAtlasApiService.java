@@ -10,7 +10,7 @@ import retrofit2.http.GET;
 
 public interface AeroAtlasApiService {
 
-    @GET //Needs Endpoint
+    @GET("cities")
     Call<List<City>> getAllCities();
 
     @GET //Needs Endpoint
