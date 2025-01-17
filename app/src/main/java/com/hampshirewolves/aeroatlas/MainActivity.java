@@ -3,19 +3,18 @@ package com.hampshirewolves.aeroatlas;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.navigation.NavigationBarView;
 import com.hampshirewolves.aeroatlas.homepage.HomepageFragment;
+import com.hampshirewolves.aeroatlas.profilepage.DiscoverPageFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     NavigationBarView bottomNavBar;
+    HomepageFragment homepageFragment = new HomepageFragment();
+    DiscoverPageFragment discoverPageFragment = new DiscoverPageFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,19 +27,30 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
         bottomNavBar.setSelectedItemId(R.id.homebutton);
 
+        if (getIntent().hasExtra("navigateTo") && "DiscoverPageFragment".equals(getIntent().getStringExtra("navigateTo"))) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.baseFragment, new DiscoverPageFragment()).commit();
+        }
     }
 
-//   TODO  Declare each fragment here i.e homepage, city view, etc
-HomepageFragment homepageFragment = new HomepageFragment();
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        if (item.getItemId() == R.id.homebutton)
+        if (item.getItemId() == R.id.homebutton){
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.baseFragment, homepageFragment)
                     .commit();
+            return true;
+        }
 
-        return true;
+        if (item.getItemId() == R.id.profileButton) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.baseFragment, discoverPageFragment)
+                    .commit();
+            return true;
+        }
+
+        return false;
     }
 }

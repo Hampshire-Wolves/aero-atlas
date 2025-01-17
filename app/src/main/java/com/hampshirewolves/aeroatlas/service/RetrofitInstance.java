@@ -9,7 +9,7 @@ public class RetrofitInstance {
 
     private static Retrofit retrofit = null;
 
-    private final static String Base_URL = "";
+    private final static String Base_URL = "http://10.0.2.2:8080/api/v1/";
 
 
     public static AeroAtlasApiService getService() {

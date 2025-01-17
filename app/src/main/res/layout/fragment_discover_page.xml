@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/discover_page_img"
+    tools:context=".profilepage.DiscoverPageFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.1"
+        android:background="@color/customcolour1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/discoverPageBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/arrow_left" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/card_view"
+        android:gravity="center"
+        android:padding="28dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        app:cardCornerRadius="28dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="35dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abyssinica_sil"
+                android:gravity="center"
+                android:text="@string/discover_your_dream_destination"
+                android:textColor="@color/customcolour1"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abyssinica_sil"
+                android:text="@string/description"
+                android:textAlignment="center"
+                android:textColor="@color/customcolour1"
+                android:textSize="19sp"
+                android:textStyle="italic" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="80dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/profilePageLoginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/discovery_page_button_background_selector"
+                    android:text="@string/LOGIN"
+                    android:textColor="@color/discovery_page_button_text_color_selector" />
+
+                <Space
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/profilePageSignupButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/discovery_page_button_background_selector"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/discovery_page_button_text_color_selector" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="140dp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
