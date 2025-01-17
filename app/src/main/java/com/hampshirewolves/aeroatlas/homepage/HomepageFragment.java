@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -105,6 +106,12 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
     }
 
     private void filteredList(String newText){
+
+
+        if (cityList == null) {
+            Log.e("HomepageFragment", "City list is null");
+        }
+
         filteredList = new ArrayList<>();
 
         for (City city : cityList){
@@ -117,7 +124,12 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
 
         } else {
 
-            cityAdapter.setFilteredList(filteredList);
+            // Update adapter with filtered data
+            if (cityAdapter != null) {
+                cityAdapter.setFilteredList(filteredList);
+            } else {
+                Log.e("HomepageFragment", "cityAdapter is null");
+            }
         }
     }
 
