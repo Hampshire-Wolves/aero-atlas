@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     NavigationBarView bottomNavBar;
     HomepageFragment homepageFragment = new HomepageFragment();
     DiscoverPageFragment discoverPageFragment = new DiscoverPageFragment();
-    ProfileFragment profileFragment=new ProfileFragment();
+    ProfileFragment profileFragment = new ProfileFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,19 +37,13 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        if (item.getItemId() == R.id.homebutton){
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.baseFragment, homepageFragment)
-                    .commit();
+        if (item.getItemId() == R.id.homebutton) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.baseFragment, homepageFragment).commit();
             return true;
         }
 
         if (item.getItemId() == R.id.profileButton) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.baseFragment, profileFragment)
-                    .commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.baseFragment, profileFragment).commit();
             return true;
         }
 
