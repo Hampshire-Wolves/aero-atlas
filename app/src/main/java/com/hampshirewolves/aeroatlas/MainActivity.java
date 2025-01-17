@@ -38,12 +38,18 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         if (item.getItemId() == R.id.homebutton) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.baseFragment, homepageFragment).commit();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.baseFragment, homepageFragment)
+                    .commit();
             return true;
         }
 
         if (item.getItemId() == R.id.profileButton) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.baseFragment, profileFragment).commit();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.baseFragment, profileFragment)
+                    .commit();
             return true;
         }
 
