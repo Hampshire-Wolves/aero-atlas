@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".flightselectorpage.FlightSelectorFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <!-- TODO: Update blank fragment layout -->
+        <EditText
+            android:id="@+id/populateFromLocation"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="sans-serif"
+            android:hint="from location"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/populateToLocation"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="sans-serif"
+            android:hint="to location"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@+id/populateFromLocation"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/departureTag"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Departure Date: "
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/populateFromLocation"
+            app:layout_constraintTop_toBottomOf="@+id/populateFromLocation" />
+
+        <TextView
+            android:id="@+id/ReturnTag"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:text="Return Date: "
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/departureTag"
+            app:layout_constraintTop_toBottomOf="@+id/populateFromLocation" />
+
+        <Button
+            android:id="@+id/departurePickerDate"
+            style="?android:spinnerStyle"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:backgroundTint="@color/customcolour1"
+            android:drawableTint="#ff0000"
+            android:fontFamily="sans-serif"
+            android:onClick="departureDatePicker"
+            android:text="JAN 21 2025"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/populateFromLocation"
+            app:layout_constraintTop_toBottomOf="@+id/departureTag"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="308dp" />
+
+        <Button
+            android:id="@+id/returnPickerDate"
+            style="?android:spinnerStyle"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:backgroundTint="@color/customcolour1"
+            android:drawableTint="#ff0000"
+            android:fontFamily="sans-serif"
+            android:onClick="departureDatePicker"
+            android:text="JAN 22 2025"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/populateToLocation"
+            app:layout_constraintTop_toBottomOf="@+id/ReturnTag"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="308dp" />
+
+        <Button
+            android:id="@+id/AddReturnFlightButton"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:backgroundTint="@color/customcolour1"
+            android:drawableTint="#ff0000"
+            android:fontFamily="sans-serif"
+            android:onClick="departureDatePicker"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="Add Return"
+            app:layout_constraintEnd_toEndOf="@+id/returnPickerDate"
+            app:layout_constraintTop_toBottomOf="@+id/returnPickerDate"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="308dp" />
+
+        <Button
+            android:id="@+id/oneWayFlightButton"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/customcolour1"
+            android:drawableTint="#ff0000"
+            android:fontFamily="sans-serif"
+            android:onClick="departureDatePicker"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="One-Way"
+            app:layout_constraintStart_toStartOf="@+id/departurePickerDate"
+            app:layout_constraintTop_toTopOf="@+id/AddReturnFlightButton"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="308dp" />
+
+
+        <TextView
+            android:id="@+id/HeaderBestOutGoingFlights"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Best Outgoing Flights:"
+            android:gravity="start"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/departureTag"
+            app:layout_constraintTop_toBottomOf="@+id/oneWayFlightButton" />
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/AddReturnFlightButton"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HeaderBestOutGoingFlights"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
+</layout>

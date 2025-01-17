@@ -19,9 +19,12 @@ tools:context=".LoginActivity">
         android:padding="10dp">
 
     <ImageView
+        android:id="@+id/loginPageBackButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/arrow_left"/>
+        android:src="@drawable/arrow_left"
+        android:clickable="true"
+        android:focusable="true"/>
     </LinearLayout>
 
     <LinearLayout
@@ -112,6 +115,13 @@ tools:context=".LoginActivity">
             android:layout_width="wrap_content"
             android:layout_height="30dp"/>
 
+        <ProgressBar
+            android:id="@+id/loginProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginPageLoginButton"
             android:layout_width="match_parent"
@@ -175,7 +185,7 @@ tools:context=".LoginActivity">
                 android:alpha="0.7"/>
 
             <Button
-                android:id="@+id/loginPageRegisterButton"
+                android:id="@+id/loginPageRedirectToRegisterButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/register"
