@@ -2,37 +2,31 @@ package com.hampshirewolves.aeroatlas.citypage;
 
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.hampshirewolves.aeroatlas.R;
-import com.hampshirewolves.aeroatlas.model.CityAttractions;
-import com.hampshirewolves.aeroatlas.ui.mainactivity.CityAttractionsAdapter;
-
-import java.util.List;
+import com.hampshirewolves.aeroatlas.databinding.FragmentCityPageBinding;
 
 public class CityPageFragment extends Fragment {
+    private FragmentCityPageBinding fragmentCityPageBinding;
 
-
-    private List<CityAttractions> cityAttractionsList;
-    private RecyclerView cityAttractionsRecyclerView;
-    private CityAttractionsAdapter cityAttractionsAdapter;
-
-    public CityPageFragment() {
-        // Required empty public constructor
-    }
+    public CityPageFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_city_page, container, false);
+        fragmentCityPageBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_city_page, container, false);
+
+        Bundle args = getArguments();
+        if (args != null) {
+            long id = args.getLong("id");
+        }
+
+        return fragmentCityPageBinding.getRoot();
     }
-
-
-
 }
