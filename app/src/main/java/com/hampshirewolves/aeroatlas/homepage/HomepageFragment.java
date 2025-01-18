@@ -2,11 +2,8 @@ package com.hampshirewolves.aeroatlas.homepage;
 
 import android.os.Bundle;
 
-import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,19 +26,14 @@ import java.util.List;
 
 
 public class HomepageFragment extends Fragment implements RecyclerViewInterface {
-
     private RecyclerView recyclerView;
     private List<City> cityList;
     private CityAdapter cityAdapter;
     private MainActivityViewModel mainActivityViewModel;
-
     private FragmentHomepageBinding fragmentHomepageBinding;
-    private static final String CITY_KEY = "city";
     private SearchView citysearchbar;
-
     private ArrayList<City> filteredList;
-    private CardView cardView;
-
+    private static final String CITY_KEY = "city";
 
     public HomepageFragment() {}
 
@@ -94,21 +86,6 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
             }
         });
 
-/*        CardView cardView = view.findViewById(R.id.cityListing);
-
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragment = new CityPageFragment();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-                fragmentTransaction.replace(R.id.baseFragment, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });*/
-
        return view;
     }
 
@@ -118,5 +95,18 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
 
     @Override
     public void onItemClick(int position) {
+        City selectedCity = cityList.get(position);
+
+        CityPageFragment cityPageFragment = new CityPageFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putLong("id", selectedCity.getId());
+        cityPageFragment.setArguments(bundle);
+
+        getParentFragmentManager()
+                .beginTransaction()
+                .replace(R.id.baseFragment, cityPageFragment)
+                .addToBackStack(null)
+                .commit();
     }
 }
