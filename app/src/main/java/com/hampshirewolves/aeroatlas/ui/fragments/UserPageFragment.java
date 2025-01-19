@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas.profilepage;
+package com.hampshirewolves.aeroatlas.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.hampshirewolves.aeroatlas.MainActivity;
+import com.hampshirewolves.aeroatlas.ui.mainactivity.MainActivity;
 import com.hampshirewolves.aeroatlas.R;
 
 

@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas.citypage;
+package com.hampshirewolves.aeroatlas.ui.fragments.citypage;
 
 import android.os.Bundle;
 
@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 
 import com.hampshirewolves.aeroatlas.R;
 import com.hampshirewolves.aeroatlas.databinding.FragmentCityPageBinding;
-import com.hampshirewolves.aeroatlas.ui.clickhandlers.CityPageClickHandlers;
 
 public class CityPageFragment extends Fragment {
     private FragmentCityPageBinding fragmentCityPageBinding;

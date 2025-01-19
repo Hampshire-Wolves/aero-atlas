@@ -1,10 +1,11 @@
-package com.hampshirewolves.aeroatlas.model;
+package com.hampshirewolves.aeroatlas.repository;
 
 import android.app.Application;
 import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
+import com.hampshirewolves.aeroatlas.model.City;
 import com.hampshirewolves.aeroatlas.service.AeroAtlasApiService;
 import com.hampshirewolves.aeroatlas.service.RetrofitInstance;
 

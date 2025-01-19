@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas.profilepage;
+package com.hampshirewolves.aeroatlas.ui.fragments.profilepage;
 
 import android.os.Bundle;
 
@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.hampshirewolves.aeroatlas.R;
+import com.hampshirewolves.aeroatlas.ui.fragments.UserPageFragment;
+import com.hampshirewolves.aeroatlas.ui.fragments.discoverpage.DiscoverPageFragment;
 
 public class ProfileFragment extends Fragment {
 

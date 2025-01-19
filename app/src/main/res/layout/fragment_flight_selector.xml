@@ -7,13 +7,13 @@
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".flightselectorpage.FlightSelectorFragment">
+    tools:context=".ui.fragments.flightselectorpage.FlightSelectorFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".ui.mainactivity.MainActivity">
 
         <!-- TODO: Update blank fragment layout -->
         <EditText

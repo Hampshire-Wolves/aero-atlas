@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas.profilepage;
+package com.hampshirewolves.aeroatlas.ui.fragments.discoverpage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,11 +14,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.hampshirewolves.aeroatlas.LoginActivity;
-import com.hampshirewolves.aeroatlas.MainActivity;
+import com.hampshirewolves.aeroatlas.ui.LoginActivity;
+import com.hampshirewolves.aeroatlas.ui.mainactivity.MainActivity;
 import com.hampshirewolves.aeroatlas.R;
-import com.hampshirewolves.aeroatlas.SignupActivity;
-import com.hampshirewolves.aeroatlas.homepage.RecyclerViewInterface;
+import com.hampshirewolves.aeroatlas.ui.SignupActivity;
+import com.hampshirewolves.aeroatlas.ui.mainactivity.RecyclerViewInterface;
 
 public class DiscoverPageFragment extends Fragment implements RecyclerViewInterface {
 

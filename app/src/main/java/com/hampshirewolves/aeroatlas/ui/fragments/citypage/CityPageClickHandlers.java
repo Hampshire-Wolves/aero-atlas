@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas.ui.clickhandlers;
+package com.hampshirewolves.aeroatlas.ui.fragments.citypage;
 
 import android.view.View;
 

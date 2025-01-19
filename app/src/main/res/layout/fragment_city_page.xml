@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <data>
-    <variable
-        name="cityinfo"
-        type="com.hampshirewolves.aeroatlas.model.City" />
-    <variable
-        name="clickHandler"
-        type="com.hampshirewolves.aeroatlas.ui.clickhandlers.CityPageClickHandlers" />
-    </data>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".citypage.CityPageFragment">
+    tools:context=".ui.fragments.citypage.CityPageFragment">
+    <data>
+        <variable
+            name="cityinfo"
+            type="com.hampshirewolves.aeroatlas.model.City" />
+        <variable
+            name="clickHandler"
+            type="com.hampshirewolves.aeroatlas.ui.fragments.citypage.CityPageClickHandlers" />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"
+        tools:context=".ui.mainactivity.MainActivity"
         >
 
         <TextView

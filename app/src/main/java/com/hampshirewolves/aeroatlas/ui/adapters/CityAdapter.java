@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas.ui.mainactivity;
+package com.hampshirewolves.aeroatlas.ui.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hampshirewolves.aeroatlas.R;
 import com.hampshirewolves.aeroatlas.databinding.CityItemLayoutBinding;
-import com.hampshirewolves.aeroatlas.homepage.RecyclerViewInterface;
 import com.hampshirewolves.aeroatlas.model.City;
+import com.hampshirewolves.aeroatlas.ui.mainactivity.RecyclerViewInterface;
 
 import java.util.ArrayList;
 import java.util.List;

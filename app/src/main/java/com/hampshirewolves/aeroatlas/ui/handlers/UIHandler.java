@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas.Handlers;
+package com.hampshirewolves.aeroatlas.ui.handlers;
 
 import android.content.Context;
 import android.view.View;

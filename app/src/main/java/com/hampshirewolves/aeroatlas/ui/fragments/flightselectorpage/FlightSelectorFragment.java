@@ -1,12 +1,9 @@
-package com.hampshirewolves.aeroatlas.flightselectorpage;
+package com.hampshirewolves.aeroatlas.ui.fragments.flightselectorpage;
 
-import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,10 +13,8 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 
 import com.hampshirewolves.aeroatlas.R;
-import com.hampshirewolves.aeroatlas.ui.mainactivity.MainActivityViewModel;
 
 import java.util.Calendar;
-import java.util.Objects;
 
 
 public class FlightSelectorFragment extends Fragment {

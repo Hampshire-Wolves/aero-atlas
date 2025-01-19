@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas.homepage;
+package com.hampshirewolves.aeroatlas.ui.fragments.homepage;
 
 import android.os.Bundle;
 
@@ -15,11 +15,12 @@ import android.view.ViewGroup;
 import android.widget.SearchView;
 
 import com.hampshirewolves.aeroatlas.R;
-import com.hampshirewolves.aeroatlas.citypage.CityPageFragment;
+import com.hampshirewolves.aeroatlas.ui.fragments.citypage.CityPageFragment;
 import com.hampshirewolves.aeroatlas.databinding.FragmentHomepageBinding;
 import com.hampshirewolves.aeroatlas.model.City;
-import com.hampshirewolves.aeroatlas.ui.mainactivity.CityAdapter;
+import com.hampshirewolves.aeroatlas.ui.adapters.CityAdapter;
 import com.hampshirewolves.aeroatlas.ui.mainactivity.MainActivityViewModel;
+import com.hampshirewolves.aeroatlas.ui.mainactivity.RecyclerViewInterface;
 
 import java.util.ArrayList;
 import java.util.List;

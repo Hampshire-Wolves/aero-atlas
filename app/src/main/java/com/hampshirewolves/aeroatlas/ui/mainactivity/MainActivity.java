@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas;
+package com.hampshirewolves.aeroatlas.ui.mainactivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -7,9 +7,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.navigation.NavigationBarView;
-import com.hampshirewolves.aeroatlas.homepage.HomepageFragment;
-import com.hampshirewolves.aeroatlas.profilepage.DiscoverPageFragment;
-import com.hampshirewolves.aeroatlas.profilepage.ProfileFragment;
+import com.hampshirewolves.aeroatlas.R;
+import com.hampshirewolves.aeroatlas.ui.fragments.discoverpage.DiscoverPageFragment;
+import com.hampshirewolves.aeroatlas.ui.fragments.profilepage.ProfileFragment;
+import com.hampshirewolves.aeroatlas.ui.fragments.homepage.HomepageFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
