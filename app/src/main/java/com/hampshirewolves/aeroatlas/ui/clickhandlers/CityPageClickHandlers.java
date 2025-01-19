@@ -1,19 +1,19 @@
 package com.hampshirewolves.aeroatlas.ui.clickhandlers;
 
-import android.content.Context;
-import android.content.Intent;
 import android.view.View;
 
-import com.hampshirewolves.aeroatlas.citypage.CityPageFragment;
-
+import androidx.fragment.app.FragmentActivity;
 
 public class CityPageClickHandlers {
 
-    private Context context;
+    private final FragmentActivity activity;
 
-    public void onBackBtnClicked(View view){
-        Intent intent = new Intent(context, CityPageFragment.class);
+    public CityPageClickHandlers(FragmentActivity activity) {
+        this.activity = activity;
+    }
 
-        context.startActivity(intent);
+    public void onBackBtnClicked(View view) {
+        // Navigate back to the previous fragment
+        activity.getSupportFragmentManager().popBackStack();
     }
 }

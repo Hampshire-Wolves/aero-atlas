@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.hampshirewolves.aeroatlas.R;
 import com.hampshirewolves.aeroatlas.databinding.FragmentCityPageBinding;
+import com.hampshirewolves.aeroatlas.ui.clickhandlers.CityPageClickHandlers;
 
 public class CityPageFragment extends Fragment {
     private FragmentCityPageBinding fragmentCityPageBinding;
@@ -21,6 +22,9 @@ public class CityPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         fragmentCityPageBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_city_page, container, false);
+
+        // Attach the click handler to the layout
+        fragmentCityPageBinding.setClickHandler(new CityPageClickHandlers(requireActivity()));
 
         Bundle args = getArguments();
         if (args != null) {
