@@ -20,7 +20,7 @@ private CityRepository cityRepository;
         this.cityRepository = new CityRepository(application);
     }
 
-    public LiveData<List<City>> getAllCities() {
-        return cityRepository.getMutableLiveData();
+    public LiveData<List<City>> fetchAllCities() {
+        return cityRepository.getCitiesLiveData();
     }
 }

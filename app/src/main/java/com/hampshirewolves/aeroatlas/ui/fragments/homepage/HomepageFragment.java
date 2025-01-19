@@ -34,12 +34,12 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
     private FragmentHomepageBinding fragmentHomepageBinding;
     private SearchView citysearchbar;
     private ArrayList<City> filteredList;
-    private static final String CITY_KEY = "city";
+    private static final String TAG = "HomepageFragment";
 
     public HomepageFragment() {}
 
     private void getAllCities() {
-        mainActivityViewModel.getAllCities().observe(getViewLifecycleOwner(), new Observer<List<City>>() {
+        mainActivityViewModel.fetchAllCities().observe(getViewLifecycleOwner(), new Observer<List<City>>() {
             @Override
             public void onChanged(List<City> cities) {
                 cityList = cities;
@@ -90,7 +90,7 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
        return view;
     }
 
-    private void filteredList(String newText){
+    private void filteredList(String newText) {
 
     }
 
