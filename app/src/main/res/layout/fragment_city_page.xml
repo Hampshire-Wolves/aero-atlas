@@ -24,7 +24,6 @@
                 android:id="@+id/locationImage"
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
-                android:hint="Image of City placed here"
                 android:scaleType="centerCrop"
                 imageUrl="@{city.imageUrl}"
                 app:layout_constraintTop_toTopOf="parent"
@@ -36,11 +35,10 @@
             <TextView
                 android:id="@+id/locationName"
                 android:layout_width="300dp"
-                android:layout_height="110dp"
+                android:layout_height="70dp"
                 android:textSize="45sp"
                 android:textStyle="bold"
-                android:layout_gravity="start"
-                android:hint="Enter Location Name Here"
+                android:hint="Location Name"
                 android:layout_margin="10dp"
                 android:fontFamily="sans-serif"
                 android:text="@{city.name}"
@@ -54,7 +52,7 @@
                 android:layout_margin="10dp"
                 android:id="@+id/starRatingImage"
                 android:layout_width="80dp"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:hint="star rating placed here"
                 />
 
@@ -64,7 +62,7 @@
                 android:layout_margin="10dp"
                 android:id="@+id/priceRatingImage"
                 android:layout_width="80dp"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:hint="star rating placed here"
                 />
 
@@ -105,7 +103,6 @@
                 android:layout_gravity="start"
                 android:textSize="20sp"
                 android:layout_margin="10dp"
-                android:hint="Description of City entered here"
                 android:fontFamily="sans-serif"
                 android:text="@{city.description}"
                 />
