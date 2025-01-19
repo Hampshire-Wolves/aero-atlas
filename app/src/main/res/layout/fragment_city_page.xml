@@ -12,6 +12,7 @@
             type="com.hampshirewolves.aeroatlas.ui.fragments.citypage.CityPageClickHandlers" />
     </data>
     <FrameLayout
+        android:id="@+id/baseFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -80,6 +81,7 @@
                 android:fontFamily="sans-serif"
                 app:layout_constraintTop_toBottomOf="@+id/locationName"
                 app:layout_constraintStart_toStartOf="parent"
+                android:onClick="@{clickHandler::onViewFlightInformationClicked}"
                 />
 
             <TextView
