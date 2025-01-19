@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.hampshirewolves.aeroatlas.R;
 import com.hampshirewolves.aeroatlas.ui.fragments.citypage.CityPageFragment;
@@ -24,6 +25,7 @@ import com.hampshirewolves.aeroatlas.ui.mainactivity.RecyclerViewInterface;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 
 public class HomepageFragment extends Fragment implements RecyclerViewInterface {
@@ -33,7 +35,7 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
     private MainActivityViewModel mainActivityViewModel;
     private FragmentHomepageBinding fragmentHomepageBinding;
     private SearchView citysearchbar;
-    private ArrayList<City> filteredList;
+    private ArrayList<City> filteredList = new ArrayList<>();
     private static final String TAG = "HomepageFragment";
 
     public HomepageFragment() {}
@@ -73,8 +75,10 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
 
         getAllCities();
 
-        fragmentHomepageBinding.homepageCitySearchBar.clearFocus();
-        fragmentHomepageBinding.homepageCitySearchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        citysearchbar = view.findViewById(R.id.homepage_city_search_bar);
+        citysearchbar.clearFocus();
+
+        citysearchbar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
@@ -82,7 +86,7 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                filteredList(newText);
+                filterList(newText);
                 return true;
             }
         });
@@ -90,13 +94,33 @@ public class HomepageFragment extends Fragment implements RecyclerViewInterface 
        return view;
     }
 
-    private void filteredList(String newText) {
+    private void filterList(String newText) {
+        filteredList.clear();
+        String lowerCaseText = newText.toLowerCase();
 
+        Predicate<City> matchesQuery = city -> city.getName().toLowerCase().contains(lowerCaseText)
+                || city.getCountry().toLowerCase().contains(lowerCaseText);
+
+        cityList.stream()
+                .filter(matchesQuery)
+                .forEach(filteredList::add);
+
+        if (filteredList.isEmpty()) {
+            Toast.makeText(getActivity(), "No cities found!", Toast.LENGTH_SHORT).show();
+        }
+
+        cityAdapter.setFilteredList(filteredList);
     }
 
     @Override
     public void onItemClick(int position) {
-        City selectedCity = cityList.get(position);
+        City selectedCity;
+
+        if (filteredList == null || filteredList.isEmpty()) {
+            selectedCity = cityList.get(position);
+        } else {
+            selectedCity = filteredList.get(position);
+        }
 
         CityPageFragment cityPageFragment = new CityPageFragment();
 
