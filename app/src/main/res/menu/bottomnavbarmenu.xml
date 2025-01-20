@@ -16,7 +16,7 @@
         />
 
     <item
-        android:id="@+id/profilebutton"
+        android:id="@+id/profileButton"
         android:title=" "
         android:icon="@drawable/profileicon_foreground"
         android:iconTint="@color/iconcolorselector1"

@@ -7,9 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.hampshirewolves.aeroatlas.model.City;
-import com.hampshirewolves.aeroatlas.model.CityAttractions;
-import com.hampshirewolves.aeroatlas.model.CityAttractionsRepository;
-import com.hampshirewolves.aeroatlas.model.CityRepository;
+import com.hampshirewolves.aeroatlas.repository.CityRepository;
 
 import java.util.List;
 
@@ -22,7 +20,7 @@ private CityRepository cityRepository;
         this.cityRepository = new CityRepository(application);
     }
 
-    public LiveData<List<City>> getAllCities() {
-        return cityRepository.getMutableLiveData();
+    public LiveData<List<City>> fetchAllCities() {
+        return cityRepository.getCitiesLiveData();
     }
 }
