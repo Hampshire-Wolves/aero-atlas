@@ -30,6 +30,7 @@
     app:menu="@menu/bottomnavbarmenu"
     app:itemIconSize="50dp"
     app:itemIconTint="@color/iconcolorselector1"
+    app:itemActiveIndicatorStyle="@style/Widget.Design.BottomNavigationView"
     />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
