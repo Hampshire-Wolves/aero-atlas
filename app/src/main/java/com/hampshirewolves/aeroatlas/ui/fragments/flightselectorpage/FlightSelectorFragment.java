@@ -37,16 +37,27 @@ public class FlightSelectorFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_flight_selector, container, false);
 
-        departureButton = view.findViewById(R.id.departurePickerDate);
+
+        // TODO: add functionality to date pickers & make return date only appear when checkbox is checked
+        Button returnDateBtn = view.findViewById(R.id.returnPickerDate);
+
         checkBox = view.findViewById(R.id.checkbox);
-
-        departureButton.setText(getTodaysDate());
-
         checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                departureButton.setVisibility(View.VISIBLE);
+                returnDateBtn.setVisibility(View.VISIBLE);
             } else {
-                departureButton.setVisibility(View.INVISIBLE);
+                returnDateBtn.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        departureButton = view.findViewById(R.id.oneWayFlightButton);
+        departureButton.setText(getTodaysDate());
+
+        departureButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initDatePicker();
+                departureDatePicker(v);
             }
         });
 
