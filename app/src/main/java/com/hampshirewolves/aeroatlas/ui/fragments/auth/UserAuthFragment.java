@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas.profilepage;
+package com.hampshirewolves.aeroatlas.ui.fragments.auth;
 
 import android.os.Bundle;
 
@@ -11,25 +11,21 @@ import android.view.ViewGroup;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.hampshirewolves.aeroatlas.R;
+import com.hampshirewolves.aeroatlas.ui.fragments.discoverpage.DiscoverPageFragment;
+import com.hampshirewolves.aeroatlas.ui.fragments.profilepage.ProfileFragment;
 
-public class ProfileFragment extends Fragment {
-
+public class UserAuthFragment extends Fragment {
     private FirebaseAuth firebaseAuth;
 
-    public ProfileFragment() {
-        // Required empty public constructor
-    }
-
+    public UserAuthFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         firebaseAuth = FirebaseAuth.getInstance();
 
         checkUserStatus();
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
@@ -37,16 +33,16 @@ public class ProfileFragment extends Fragment {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
         if (firebaseUser != null) {
-            navigateToUserPage();
+            navigateToProfilePage();
         } else {
             navigateToDiscoverPage();
         }
     }
 
-    private void navigateToUserPage() {
+    private void navigateToProfilePage() {
         getParentFragmentManager()
                 .beginTransaction()
-                .replace(R.id.baseFragment, new UserPageFragment())
+                .replace(R.id.baseFragment, new ProfileFragment())
                 .commit();
     }
 

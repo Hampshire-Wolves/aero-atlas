@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas.profilepage;
+package com.hampshirewolves.aeroatlas.ui.fragments.profilepage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,11 +16,11 @@ import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.hampshirewolves.aeroatlas.MainActivity;
+import com.hampshirewolves.aeroatlas.ui.mainactivity.MainActivity;
 import com.hampshirewolves.aeroatlas.R;
 
 
-public class UserPageFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
     TextView userPageEmailTextView;
     Button userPageLogoutButton;
@@ -28,7 +28,7 @@ public class UserPageFragment extends Fragment {
     ImageView userPageBackButton;
     TextView signupPageEmailValue;
 
-    public UserPageFragment() {
+    public ProfileFragment() {
         // Required empty public constructor
     }
 
@@ -36,7 +36,7 @@ public class UserPageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user_page, container, false);
+        return inflater.inflate(R.layout.fragment_profile_page, container, false);
     }
 
     @Override

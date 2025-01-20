@@ -9,8 +9,6 @@ import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.BindingAdapter;
 
-import java.time.LocalDateTime;
-
 public class City extends BaseObservable implements Parcelable {
 
     private Long id;
@@ -23,15 +21,15 @@ public class City extends BaseObservable implements Parcelable {
     private String iataCode;
     private String starRating; //Enum
     private String priceRating; //Enum
-    private LocalDateTime createdAt;
-    private LocalDateTime modifiedAt;
+    private String createdAt;
+    private String modifiedAt;
 
     public City() {
     }
 
     public City(Long id, String name, String description, String imageUrl, String country,
                 Double lat, Double lng, String iataCode, String starRating,
-                String priceRating, LocalDateTime createdAt, LocalDateTime modifiedAt) {
+                String priceRating, String createdAt, String modifiedAt) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -61,6 +59,8 @@ public class City extends BaseObservable implements Parcelable {
         iataCode = in.readString();
         starRating = in.readString();
         priceRating = in.readString();
+        createdAt = in.readString();
+        modifiedAt = in.readString();
     }
 
     public static final Creator<City> CREATOR = new Creator<City>() {
@@ -102,6 +102,8 @@ public class City extends BaseObservable implements Parcelable {
         dest.writeString(iataCode);
         dest.writeString(starRating);
         dest.writeString(priceRating);
+        dest.writeString(createdAt);
+        dest.writeString(modifiedAt);
     }
 @Bindable
     public Long getId() {
@@ -144,11 +146,11 @@ public class City extends BaseObservable implements Parcelable {
         return priceRating;
     }
     @Bindable
-    public LocalDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
     @Bindable
-    public LocalDateTime getModifiedAt() {
+    public String getModifiedAt() {
         return modifiedAt;
     }
 }

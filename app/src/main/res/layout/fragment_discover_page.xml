@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/discover_page_img"
-    tools:context=".profilepage.DiscoverPageFragment">
+    tools:context=".ui.fragments.discoverpage.DiscoverPageFragment">
 
 
     <RelativeLayout

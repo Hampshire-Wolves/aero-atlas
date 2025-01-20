@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas;
+package com.hampshirewolves.aeroatlas.ui;
 
 import static android.content.ContentValues.TAG;
 
@@ -22,8 +22,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.hampshirewolves.aeroatlas.Handlers.FirebaseErrorHandler;
-import com.hampshirewolves.aeroatlas.Handlers.UIHandler;
+import com.hampshirewolves.aeroatlas.R;
+import com.hampshirewolves.aeroatlas.ui.handlers.FirebaseErrorHandler;
+import com.hampshirewolves.aeroatlas.ui.handlers.UIHandler;
+import com.hampshirewolves.aeroatlas.ui.mainactivity.MainActivity;
 
 public class SignupActivity extends AppCompatActivity {
     EditText signupPageEmailInputBox, signupPagePasswordInputBox, signupPageConfirmPasswordInputBox;

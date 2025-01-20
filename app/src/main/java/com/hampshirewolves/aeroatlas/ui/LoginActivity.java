@@ -1,4 +1,4 @@
-package com.hampshirewolves.aeroatlas;
+package com.hampshirewolves.aeroatlas.ui;
 
 import static android.content.ContentValues.TAG;
 
@@ -16,18 +16,16 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.hampshirewolves.aeroatlas.Handlers.FirebaseErrorHandler;
-import com.hampshirewolves.aeroatlas.Handlers.UIHandler;
-import com.hampshirewolves.aeroatlas.profilepage.DiscoverPageFragment;
+import com.hampshirewolves.aeroatlas.R;
+import com.hampshirewolves.aeroatlas.ui.handlers.FirebaseErrorHandler;
+import com.hampshirewolves.aeroatlas.ui.handlers.UIHandler;
+import com.hampshirewolves.aeroatlas.ui.mainactivity.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
     EditText loginPageEmailInputBox, loginPagePasswordInputBox;
