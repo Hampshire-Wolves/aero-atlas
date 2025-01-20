@@ -17,6 +17,6 @@ public interface AeroAtlasApiService {
     @GET("cities/{id}")
     Call<City> getCityById(@Path("id") long id);
 
-    @GET //Needs Endpoint
+    @GET("flights/offers")
     Call<List<Flights>> getAllFlights();
 }
