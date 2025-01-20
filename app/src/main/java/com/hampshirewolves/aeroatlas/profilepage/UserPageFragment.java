@@ -6,18 +6,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.hampshirewolves.aeroatlas.MainActivity;
 import com.hampshirewolves.aeroatlas.R;
 
 
 public class UserPageFragment extends Fragment {
 
+    TextView userPageEmailTextView;
+    Button userPageLogoutButton;
+
+    ImageView userPageBackButton;
+    TextView signupPageEmailValue;
 
     public UserPageFragment() {
         // Required empty public constructor
@@ -34,11 +43,29 @@ public class UserPageFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button userPageLogoutButton = view.findViewById(R.id.userPageLogoutButton);
+        userPageEmailTextView = view.findViewById(R.id.userPageEmailTextView);
+        userPageLogoutButton = view.findViewById(R.id.userPageLogoutButton);
+        userPageBackButton = view.findViewById(R.id.userPageBackButton);
+        signupPageEmailValue = view.findViewById(R.id.signupPageEmailValue);
+
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (firebaseUser != null) {
+            userPageEmailTextView.setText(firebaseUser.getEmail());
+            signupPageEmailValue.setText(firebaseUser.getEmail());
+        } else {
+            userPageEmailTextView.setText("No email available");
+        }
 
         userPageLogoutButton.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
+            Toast.makeText(requireContext(), "Successfully logged out",
+                    Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getActivity(), MainActivity.class);
+            startActivity(intent);
+        });
 
+        userPageBackButton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), MainActivity.class);
             startActivity(intent);
         });
