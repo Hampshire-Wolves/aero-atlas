@@ -3,8 +3,9 @@ package com.hampshirewolves.aeroatlas.model;
 import android.os.Parcelable;
 
 import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 
-public class Flights extends BaseObservable {
+public class Flights extends BaseObservable implements Parcelable {
 
     private String id;
     private String price;
@@ -26,5 +27,33 @@ public class Flights extends BaseObservable {
         this.destination = destination;
         this.departureDate = departureDate;
         this.arrivalDate = arrivalDate;
+    }
+    @Bindable
+    public String getId() {
+        return id;
+    }
+    @Bindable
+    public String getPrice() {
+        return price;
+    }
+    @Bindable
+    public String getCurrency() {
+        return currency;
+    }
+    @Bindable
+    public String getOrigin() {
+        return origin;
+    }
+    @Bindable
+    public String getDestination() {
+        return destination;
+    }
+    @Bindable
+    public String getDepartureDate() {
+        return departureDate;
+    }
+    @Bindable
+    public String getArrivalDate() {
+        return arrivalDate;
     }
 }
