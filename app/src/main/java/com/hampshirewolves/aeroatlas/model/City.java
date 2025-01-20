@@ -9,6 +9,9 @@ import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.BindingAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class City extends BaseObservable implements Parcelable {
 
     private Long id;
@@ -23,13 +26,14 @@ public class City extends BaseObservable implements Parcelable {
     private String priceRating; //Enum
     private String createdAt;
     private String modifiedAt;
+    private List<CityAttractions> attractions;
 
     public City() {
     }
 
     public City(Long id, String name, String description, String imageUrl, String country,
                 Double lat, Double lng, String iataCode, String starRating,
-                String priceRating, String createdAt, String modifiedAt) {
+                String priceRating, String createdAt, String modifiedAt, List<CityAttractions> attractions) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -42,6 +46,7 @@ public class City extends BaseObservable implements Parcelable {
         this.priceRating = priceRating;
         this.createdAt = createdAt;
         this.modifiedAt = modifiedAt;
+        this.attractions = attractions;
     }
 
     protected City(Parcel in) {
@@ -61,6 +66,7 @@ public class City extends BaseObservable implements Parcelable {
         priceRating = in.readString();
         createdAt = in.readString();
         modifiedAt = in.readString();
+        attractions = in.createTypedArrayList(CityAttractions.CREATOR);
     }
 
     public static final Creator<City> CREATOR = new Creator<City>() {
@@ -104,6 +110,7 @@ public class City extends BaseObservable implements Parcelable {
         dest.writeString(priceRating);
         dest.writeString(createdAt);
         dest.writeString(modifiedAt);
+        dest.writeList(attractions);
     }
 @Bindable
     public Long getId() {
@@ -152,5 +159,14 @@ public class City extends BaseObservable implements Parcelable {
     @Bindable
     public String getModifiedAt() {
         return modifiedAt;
+    }
+    @Bindable
+    public List<CityAttractions> getAttractions() {
+        return attractions;
+    }
+
+    @Bindable
+    public void setAttractions(List<CityAttractions> attractions) {
+        this.attractions = attractions;
     }
 }

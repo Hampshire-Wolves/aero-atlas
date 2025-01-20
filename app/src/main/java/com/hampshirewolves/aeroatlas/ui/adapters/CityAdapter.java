@@ -62,7 +62,6 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CityViewHolder
         notifyDataSetChanged();
     }
 
-
     public static class CityViewHolder extends RecyclerView.ViewHolder {
         CityItemLayoutBinding cityItemLayoutBinding;
 

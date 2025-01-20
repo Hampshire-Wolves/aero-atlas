@@ -16,12 +16,12 @@ public class CityAttractions extends BaseObservable implements Parcelable {
     private Long id;
     private String name;
     private String imageUrl;
-    private LocalDateTime createdAt;
-    private LocalDateTime modifiedAt;
+    private String createdAt;
+    private String modifiedAt;
 
     public CityAttractions(){};
 
-    public CityAttractions(Long id, String name, String imageUrl, LocalDateTime createdAt, LocalDateTime modifiedAt){
+    public CityAttractions(Long id, String name, String imageUrl, String createdAt, String modifiedAt){
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
@@ -85,11 +85,11 @@ public class CityAttractions extends BaseObservable implements Parcelable {
     public String getImageUrl()  {return imageUrl;}
 
     @Bindable
-    public LocalDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
     @Bindable
-    public LocalDateTime getModifiedAt() {
+    public String getModifiedAt() {
         return modifiedAt;
     }
 
