@@ -28,4 +28,7 @@
     <string name="password_value">*********</string>
     <string name="example_yahoo_com">example@yahoo.com</string>
     <string name="useremailaddress">userEmailAddress</string>
+    <string name="spin_the_globe_find_your_next_destination">Spin The Globe, Find Your Next Destination!</string>
+    <string name="your_adventure_awaits">Your Adventure awaits..</string>
+    <string name="find_your_next_getaway">Find Your Next Getaway</string>
 </resources>

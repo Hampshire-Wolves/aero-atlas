@@ -11,6 +11,7 @@ import com.hampshirewolves.aeroatlas.R;
 import com.hampshirewolves.aeroatlas.ui.fragments.discoverpage.DiscoverPageFragment;
 import com.hampshirewolves.aeroatlas.ui.fragments.homepage.HomepageFragment;
 import com.hampshirewolves.aeroatlas.ui.fragments.auth.UserAuthFragment;
+import com.hampshirewolves.aeroatlas.ui.fragments.randomiserpage.RandomiserFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     HomepageFragment homepageFragment = new HomepageFragment();
     DiscoverPageFragment discoverPageFragment = new DiscoverPageFragment();
     UserAuthFragment userAuthFragment = new UserAuthFragment();
+    RandomiserFragment randomiserFragment= new RandomiserFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,14 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.baseFragment, userAuthFragment)
+                    .commit();
+            return true;
+        }
+
+        if (item.getItemId() == R.id.randomiserButton) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.baseFragment, randomiserFragment)
                     .commit();
             return true;
         }

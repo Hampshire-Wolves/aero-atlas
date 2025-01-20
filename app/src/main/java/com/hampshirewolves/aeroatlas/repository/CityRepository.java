@@ -20,6 +20,8 @@ public class CityRepository {
     private List<City> cities = new ArrayList<>();
     private MutableLiveData<List<City>> citiesLiveData = new MutableLiveData<>();
     private MutableLiveData<City> singleCityLiveData = new MutableLiveData<>();
+
+    private MutableLiveData<City> randomCityLiveData = new MutableLiveData<>();
     private AeroAtlasApiService service;
     private Application application;
 
@@ -67,5 +69,25 @@ public class CityRepository {
         });
 
         return singleCityLiveData;
+    }
+
+    public MutableLiveData<City> getRandomCityLiveData() {
+        Call<City> call = service.getRandomCity();
+
+        call.enqueue(new Callback<City>() {
+            @Override
+            public void onResponse(Call<City> call, Response<City> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    randomCityLiveData.setValue(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<City> call, Throwable t) {
+                Log.i("GET /cities/random", t.getMessage());
+            }
+        });
+
+        return randomCityLiveData;
     }
 }

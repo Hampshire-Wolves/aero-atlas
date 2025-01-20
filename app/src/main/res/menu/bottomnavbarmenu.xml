@@ -9,7 +9,7 @@
         />
 
     <item
-        android:id="@+id/randomizerbutton"
+        android:id="@+id/randomiserButton"
         android:title=" "
         android:icon="@drawable/randomizericon_foreground"
         android:iconTint="@color/iconcolorselector1"

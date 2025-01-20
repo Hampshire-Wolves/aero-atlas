@@ -15,4 +15,7 @@ public interface AeroAtlasApiService {
 
     @GET("cities/{id}")
     Call<City> getCityById(@Path("id") long id);
+
+    @GET("cities/random")
+    Call<City> getRandomCity();
 }
