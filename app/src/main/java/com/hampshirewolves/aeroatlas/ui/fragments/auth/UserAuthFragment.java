@@ -17,20 +17,15 @@ import com.hampshirewolves.aeroatlas.ui.fragments.profilepage.ProfileFragment;
 public class UserAuthFragment extends Fragment {
     private FirebaseAuth firebaseAuth;
 
-    public UserAuthFragment() {
-        // Required empty public constructor
-    }
-
+    public UserAuthFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         firebaseAuth = FirebaseAuth.getInstance();
 
         checkUserStatus();
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
@@ -38,13 +33,13 @@ public class UserAuthFragment extends Fragment {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
         if (firebaseUser != null) {
-            navigateToUserPage();
+            navigateToProfilePage();
         } else {
             navigateToDiscoverPage();
         }
     }
 
-    private void navigateToUserPage() {
+    private void navigateToProfilePage() {
         getParentFragmentManager()
                 .beginTransaction()
                 .replace(R.id.baseFragment, new ProfileFragment())
