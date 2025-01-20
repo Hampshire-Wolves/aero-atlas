@@ -1,5 +1,7 @@
 package com.hampshirewolves.aeroatlas.ui.adapters;
 
+import static androidx.databinding.library.baseAdapters.BR.cityList;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hampshirewolves.aeroatlas.R;
 import com.hampshirewolves.aeroatlas.databinding.PlacesToVisitRecyclerBinding;
 import com.hampshirewolves.aeroatlas.model.City;
+import com.hampshirewolves.aeroatlas.model.CityAttractions;
 import com.hampshirewolves.aeroatlas.ui.mainactivity.RecyclerViewInterface;
 
 import java.util.ArrayList;
@@ -20,12 +23,12 @@ import java.util.List;
 public class CityAttractionsAdapter extends RecyclerView.Adapter<CityAttractionsAdapter.CityAttractionsViewHolder> {
 
     private Context context;
-    private List<City> cityList;
+    private List<CityAttractions> cityAttractionsList;
     private final RecyclerViewInterface recyclerViewInterface;
 
-    public CityAttractionsAdapter(Context context, List<City> cityList, RecyclerViewInterface recyclerViewInterface) {
+    public CityAttractionsAdapter(Context context, List<CityAttractions> cityAttractionsList, RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
-        this.cityList = cityList;
+        this.cityAttractionsList = cityAttractionsList;
         this.recyclerViewInterface = recyclerViewInterface;
     }
 
@@ -43,8 +46,8 @@ public class CityAttractionsAdapter extends RecyclerView.Adapter<CityAttractions
 
     @Override
     public void onBindViewHolder(@NonNull CityAttractionsViewHolder holder, int position) {
-        City city = cityList.get(position);
-        holder.cityAttractionsRecyclerBinding.setCityattractionsinfo(city);
+        CityAttractions cityAttractions = cityAttractionsList.get(position);
+        holder.placesToVisitRecyclerBinding.setCityattractionsinfo(cityAttractions);
 
         holder.itemView.setOnClickListener(v -> {
             if (recyclerViewInterface != null) {
@@ -55,20 +58,20 @@ public class CityAttractionsAdapter extends RecyclerView.Adapter<CityAttractions
 
     @Override
     public int getItemCount() {
-        return cityList.size();
+        return cityAttractionsList.size();
     }
 
-    public void setFilteredList(ArrayList<City> filteredList) {
-        this.cityList = filteredList;
+    public void setFilteredList(List<CityAttractions> filteredList) {
+        this.cityAttractionsList = filteredList;
         notifyDataSetChanged();
     }
 
     public static class CityAttractionsViewHolder extends RecyclerView.ViewHolder {
-        PlacesToVisitRecyclerBinding cityAttractionsRecyclerBinding;
+        PlacesToVisitRecyclerBinding placesToVisitRecyclerBinding;
 
-        public CityAttractionsViewHolder(PlacesToVisitRecyclerBinding cityAttractionsRecyclerBinding, RecyclerViewInterface recyclerViewInterface) {
-            super(cityAttractionsRecyclerBinding.getRoot());
-            this.cityAttractionsRecyclerBinding = cityAttractionsRecyclerBinding;
+        public CityAttractionsViewHolder(PlacesToVisitRecyclerBinding placesToVisitRecyclerBinding, RecyclerViewInterface recyclerViewInterface) {
+            super(placesToVisitRecyclerBinding.getRoot());
+            this.placesToVisitRecyclerBinding = placesToVisitRecyclerBinding;
 
             itemView.setOnClickListener(v -> {
                 if (recyclerViewInterface != null) {
