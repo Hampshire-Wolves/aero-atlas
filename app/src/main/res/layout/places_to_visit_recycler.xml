@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="cityattractionsinfo"
-            type="com.hampshirewolves.aeroatlas.model.City" />
+            type="com.hampshirewolves.aeroatlas.model.CityAttractions" />
     </data>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -29,7 +29,7 @@
                     android:id="@+id/placesToVisitCoverImage"
                     android:layout_width="400dp"
                     android:layout_height="200dp"
-                    android:src="@{cityattractionsinfo.attractions.get(0).imageUrl}"
+                    android:src="@{cityattractionsinfo.imageUrl}"
                     android:adjustViewBounds="true"
                     android:contentDescription="@string/cover"
                     />
@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="start"
-                    android:text="@{cityattractionsinfo.attractions.get(0).name}"
+                    android:text="@{cityattractionsinfo.name}"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"/>
