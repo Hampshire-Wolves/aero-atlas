@@ -1,6 +1,7 @@
-package com.hampshirewolves.aeroatlas.ui.mainactivity;
+package com.hampshirewolves.aeroatlas.ui.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -10,22 +11,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hampshirewolves.aeroatlas.R;
 import com.hampshirewolves.aeroatlas.databinding.FlightsRecyclerBinding;
-import com.hampshirewolves.aeroatlas.model.Flights;
+import com.hampshirewolves.aeroatlas.model.Flight;
+import com.hampshirewolves.aeroatlas.ui.mainactivity.RecyclerViewInterface;
 
 import java.util.List;
 
 public class FlightAdapter extends RecyclerView.Adapter<FlightAdapter.FlightViewHolder> {
-
-    private List<Flights> flightsList;
-
+    private List<Flight> flightList;
     private Context context;
-
     private final RecyclerViewInterface recyclerViewInterface;
 
-    public FlightAdapter(RecyclerViewInterface recyclerViewInterface, Context context, List<Flights> flightsList) {
+    public FlightAdapter(RecyclerViewInterface recyclerViewInterface, Context context, List<Flight> flightList) {
         this.recyclerViewInterface = recyclerViewInterface;
         this.context = context;
-        this.flightsList = flightsList;
+        this.flightList = flightList;
     }
 
     @NonNull
@@ -38,27 +37,30 @@ public class FlightAdapter extends RecyclerView.Adapter<FlightAdapter.FlightView
                 false
         );
 
-        return new FlightViewHolder(binding, recyclerViewInterface);
+        return new FlightViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull FlightViewHolder holder, int position) {
-        Flights flights = flightsList.get(position);
-
-        holder.flightsRecyclerBinding.setFlightItem(flights);
-
+        Flight flight = flightList.get(position);
+        holder.flightsRecyclerBinding.setFlight(flight);
+        holder.itemView.setOnClickListener(v -> recyclerViewInterface.onItemClick(position));
     }
 
     @Override
     public int getItemCount() {
-        return flightsList.size();
+        return flightList.size();
+    }
+
+    public void swapItems(List<Flight> flightList) {
+        this.flightList = flightList;
+        notifyDataSetChanged();
     }
 
     public static class FlightViewHolder extends RecyclerView.ViewHolder {
-
         FlightsRecyclerBinding flightsRecyclerBinding;
 
-        public FlightViewHolder(FlightsRecyclerBinding flightsRecyclerBinding, RecyclerViewInterface recyclerViewInterface) {
+        public FlightViewHolder(@NonNull FlightsRecyclerBinding flightsRecyclerBinding) {
             super(flightsRecyclerBinding.getRoot());
             this.flightsRecyclerBinding = flightsRecyclerBinding;
         }

@@ -14,8 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.mainactivity.MainActivity">
-
-        <!-- TODO: Update blank fragment layout -->
         <EditText
             android:id="@+id/populateFromLocation"
             android:layout_width="160dp"
@@ -104,6 +102,16 @@
             tools:layout_editor_absoluteY="308dp" />
 
         <Button
+            android:id="@+id/flight_selector_confirm_button"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:text="Search Flights"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/oneWayFlightButton" />
+
+        <Button
             android:id="@+id/AddReturnFlightButton"
             android:layout_width="130dp"
             android:layout_height="40dp"
@@ -157,6 +165,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/flight_selector_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="15dp"
@@ -164,12 +173,6 @@
             app:layout_constraintTop_toBottomOf="@+id/HeaderBestOutGoingFlights"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
-
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </FrameLayout>
 </layout>
