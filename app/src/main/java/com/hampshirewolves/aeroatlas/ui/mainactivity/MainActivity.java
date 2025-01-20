@@ -9,15 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.navigation.NavigationBarView;
 import com.hampshirewolves.aeroatlas.R;
 import com.hampshirewolves.aeroatlas.ui.fragments.discoverpage.DiscoverPageFragment;
-import com.hampshirewolves.aeroatlas.ui.fragments.profilepage.ProfileFragment;
 import com.hampshirewolves.aeroatlas.ui.fragments.homepage.HomepageFragment;
+import com.hampshirewolves.aeroatlas.ui.fragments.auth.UserAuthFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     NavigationBarView bottomNavBar;
     HomepageFragment homepageFragment = new HomepageFragment();
     DiscoverPageFragment discoverPageFragment = new DiscoverPageFragment();
-    ProfileFragment profileFragment = new ProfileFragment();
+    UserAuthFragment userAuthFragment = new UserAuthFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         if (item.getItemId() == R.id.profileButton) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.baseFragment, profileFragment)
+                    .replace(R.id.baseFragment, userAuthFragment)
                     .commit();
             return true;
         }
