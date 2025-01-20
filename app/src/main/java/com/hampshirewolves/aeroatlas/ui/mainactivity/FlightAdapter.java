@@ -1,5 +1,6 @@
 package com.hampshirewolves.aeroatlas.ui.mainactivity;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -9,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hampshirewolves.aeroatlas.R;
 import com.hampshirewolves.aeroatlas.databinding.FlightsRecyclerBinding;
-import com.hampshirewolves.aeroatlas.homepage.RecyclerViewInterface;
 import com.hampshirewolves.aeroatlas.model.Flights;
 
 import java.util.List;
@@ -17,17 +17,20 @@ import java.util.List;
 public class FlightAdapter extends RecyclerView.Adapter<FlightAdapter.FlightViewHolder> {
 
     private List<Flights> flightsList;
+
+    private Context context;
+
     private final RecyclerViewInterface recyclerViewInterface;
 
-    public FlightAdapter(List<Flights> flightsList, RecyclerViewInterface recyclerViewInterface) {
-        this.flightsList = flightsList;
+    public FlightAdapter(RecyclerViewInterface recyclerViewInterface, Context context, List<Flights> flightsList) {
         this.recyclerViewInterface = recyclerViewInterface;
+        this.context = context;
+        this.flightsList = flightsList;
     }
 
     @NonNull
     @Override
     public FlightViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         FlightsRecyclerBinding binding = DataBindingUtil.inflate(
                 LayoutInflater.from(parent.getContext()),
                 R.layout.flights_recycler,
@@ -41,7 +44,8 @@ public class FlightAdapter extends RecyclerView.Adapter<FlightAdapter.FlightView
     @Override
     public void onBindViewHolder(@NonNull FlightViewHolder holder, int position) {
         Flights flights = flightsList.get(position);
-        holder.flightsRecyclerBinding.setFlightsList(flights);
+
+        holder.flightsRecyclerBinding.setFlightItem(flights);
 
     }
 
